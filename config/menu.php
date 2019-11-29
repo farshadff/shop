@@ -4,7 +4,7 @@ return [
     'admin' => [
 
     ],
-    
+
     'customer' => [
 
     ]

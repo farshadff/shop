@@ -12,6 +12,8 @@
     <meta http-equiv="content-language" content="{{ app()->getLocale() }}">
 
     <link rel="stylesheet" href="{{ bagisto_asset('css/shop.css') }}">
+    <link rel="stylesheet" href="{{ bagisto_asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ bagisto_asset('css/costum.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
 
     @if ($favicon = core()->getCurrentChannel()->favicon_url)

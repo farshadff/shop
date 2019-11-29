@@ -19,9 +19,8 @@
             <span class="count"> ({{ $cart->items->count() }})</span>
         </span>
 
-        <i class="icon arrow-down-icon"></i>
+{{--        <i class="icon arrow-down-icon"></i>--}}
     </div>
-
     <div class="dropdown-list" style="display: none; top: 52px; right: 0px;">
         <div class="dropdown-container">
             <div class="dropdown-cart">

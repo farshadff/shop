@@ -1,20 +1,19 @@
 <?php
 
 return [
-    'default' => 'default',
+    'default' => 'nicolas',
 
     'themes' => [
-        'default' => [
-            'views_path' => 'resources/themes/default/views',
-            'assets_path' => 'public/themes/default/assets',
-            'name' => 'Default'
-        ],
+//        'default' => [
+//            'views_path' => 'resources/themes/default/views',
+//            'assets_path' => 'public/themes/default/assets',
+//            'name' => 'Default'
+//        ],
 
-        // 'bliss' => [
-        //     'views_path' => 'resources/themes/bliss/views',
-        //     'assets_path' => 'public/themes/bliss/assets',
-        //     'name' => 'Bliss',
-        //     'parent' => 'default'
-        // ]
+         'nicolas' => [
+             'views_path' => 'resources/themes/nicolas/views',
+             'assets_path' => 'public/themes/nicolas/assets',
+             'name' => 'nicolas',
+         ]
     ]
 ];

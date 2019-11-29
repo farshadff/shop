@@ -8,7 +8,7 @@
             @include('shop::products.wishlist')
         </div>
     @else
-        <div class="cart-wish-wrap">
+        <div class="cart-wish-wrap text-center">
             <form action="{{ route('cart.add', $product->product_id) }}" method="POST">
                 @csrf
                 <input type="hidden" name="product" value="{{ $product->product_id }}">

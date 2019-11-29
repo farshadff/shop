@@ -23,10 +23,11 @@ class Category extends TranslatableModel implements CategoryContract
      */
     public function image_url()
     {
+
         if (! $this->image)
             return;
-
-        return Storage::url($this->image);
+//        return Storage::url($this->image);
+        return 'http://localhost:8000/storage/'. $this->image;
     }
 
     /**

@@ -1,5 +1,5 @@
 <div class="header" id="header">
-    <div class="header-top">
+    <div class="header-top container">
         <div class="left-content">
             <ul class="logo-container">
                 <li>
@@ -27,8 +27,7 @@
                 </li>
             </ul>
         </div>
-
-        <?php
+            <?php
             $query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
             $searchTerm = explode("&", $query);
 
@@ -37,130 +36,133 @@
                     $serachQuery = $term;
                 }
             }
-        ?>
+            ?>
 
-        <div class="right-content">
+            <div class="right-content">
 
-            <span class="search-box"><span class="icon icon-search" id="search"></span></span>
+                <span class="search-box"><span class="icon icon-search" id="search"></span></span>
 
-            <ul class="right-content-menu">
+                <ul class="right-content-menu">
 
-                {!! view_render_event('bagisto.shop.layout.header.currency-item.before') !!}
+                    {!! view_render_event('bagisto.shop.layout.header.currency-item.before') !!}
 
-                @if (core()->getCurrentChannel()->currencies->count() > 1)
-                    <li class="currency-switcher">
+                    @if (core()->getCurrentChannel()->currencies->count() > 1)
+                        <li class="currency-switcher">
                         <span class="dropdown-toggle">
                             {{ core()->getCurrentCurrencyCode() }}
 
                             <i class="icon arrow-down-icon"></i>
                         </span>
 
-                        <ul class="dropdown-list currency">
-                            @foreach (core()->getCurrentChannel()->currencies as $currency)
-                                <li>
-                                    @if (isset($serachQuery))
-                                        <a href="?{{ $serachQuery }}&currency={{ $currency->code }}">{{ $currency->code }}</a>
-                                    @else
-                                        <a href="?currency={{ $currency->code }}">{{ $currency->code }}</a>
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                @endif
+                            <ul class="dropdown-list currency">
+                                @foreach (core()->getCurrentChannel()->currencies as $currency)
+                                    <li>
+                                        @if (isset($serachQuery))
+                                            <a href="?{{ $serachQuery }}&currency={{ $currency->code }}">{{ $currency->code }}</a>
+                                        @else
+                                            <a href="?currency={{ $currency->code }}">{{ $currency->code }}</a>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endif
 
-                {!! view_render_event('bagisto.shop.layout.header.currency-item.after') !!}
+                    {!! view_render_event('bagisto.shop.layout.header.currency-item.after') !!}
 
 
-                {!! view_render_event('bagisto.shop.layout.header.account-item.before') !!}
+                    {!! view_render_event('bagisto.shop.layout.header.account-item.before') !!}
 
-                <li>
+                    <li>
                     <span class="dropdown-toggle">
                         <i class="icon account-icon"></i>
 
-                        <span class="name">{{ __('shop::app.header.account') }}</span>
+{{--                        <span class="name">{{ __('shop::app.header.account') }}</span>--}}
 
-                        <i class="icon arrow-down-icon"></i>
+{{--                                                <i class="icon arrow-down-icon"></i>--}}
                     </span>
 
-                    @guest('customer')
-                        <ul class="dropdown-list account guest">
-                            <li>
-                                <div>
-                                    <label style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
-                                        {{ __('shop::app.header.title') }}
-                                    </label>
-                                </div>
+                        @guest('customer')
+                            <ul class="dropdown-list account guest">
+                                <li>
+                                    <div>
+                                        <label style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
+                                            {{ __('shop::app.header.title') }}
+                                        </label>
+                                    </div>
 
-                                <div style="margin-top: 5px;">
-                                    <span style="font-size: 12px;">{{ __('shop::app.header.dropdown-text') }}</span>
-                                </div>
+                                    <div style="margin-top: 5px;">
+                                        <span style="font-size: 12px;">{{ __('shop::app.header.dropdown-text') }}</span>
+                                    </div>
 
-                                <div style="margin-top: 15px;">
-                                    <a class="btn btn-primary btn-md" href="{{ route('customer.session.index') }}" style="color: #ffffff">
-                                        {{ __('shop::app.header.sign-in') }}
-                                    </a>
+                                    <div style="margin-top: 15px;">
+                                        <a class="btn btn-primary btn-md" href="{{ route('customer.session.index') }}" style="color: #ffffff">
+                                            {{ __('shop::app.header.sign-in') }}
+                                        </a>
 
-                                    <a class="btn btn-primary btn-md" href="{{ route('customer.register.index') }}" style="float: right; color: #ffffff">
-                                        {{ __('shop::app.header.sign-up') }}
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    @endguest
+                                        <a class="btn btn-primary btn-md" href="{{ route('customer.register.index') }}" style="float: right; color: #ffffff">
+                                            {{ __('shop::app.header.sign-up') }}
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        @endguest
 
-                    @auth('customer')
-                        <ul class="dropdown-list account customer">
-                            <li>
-                                <div>
-                                    <label style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
-                                        {{ auth()->guard('customer')->user()->first_name }}
-                                    </label>
-                                </div>
+                        @auth('customer')
+                            <ul class="dropdown-list account customer">
+                                <li>
+                                    <div>
+                                        <label style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
+                                            {{ auth()->guard('customer')->user()->first_name }}
+                                        </label>
+                                    </div>
 
-                                <ul>
-                                    <li>
-                                        <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>
-                                    </li>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="{{ route('customer.wishlist.index') }}">{{ __('shop::app.header.wishlist') }}</a>
-                                    </li>
+                                        <li>
+                                            <a href="{{ route('customer.wishlist.index') }}">{{ __('shop::app.header.wishlist') }}</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="{{ route('shop.checkout.cart.index') }}">{{ __('shop::app.header.cart') }}</a>
-                                    </li>
+                                        <li>
+                                            <a href="{{ route('shop.checkout.cart.index') }}">{{ __('shop::app.header.cart') }}</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    @endauth
-                </li>
+                                        <li>
+                                            <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        @endauth
+                    </li>
 
-                {!! view_render_event('bagisto.shop.layout.header.account-item.after') !!}
+                    {!! view_render_event('bagisto.shop.layout.header.account-item.after') !!}
 
 
-                {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
+                    {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
 
-                <li class="cart-dropdown-container">
+                    <li class="cart-dropdown-container">
 
-                    @include('shop::checkout.cart.mini-cart')
+                        @include('shop::checkout.cart.mini-cart')
 
-                </li>
+                    </li>
 
-                {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
+                    {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
 
-            </ul>
+                </ul>
 
-            <span class="menu-box" ><span class="icon icon-menu" id="hammenu"></span>
-        </div>
+                <span class="menu-box" ><span class="icon icon-menu" id="hammenu"> </span></span>
+            </div>
+
     </div>
 
     <div class="header-bottom" id="header-bottom">
+        <div class="container">
         @include('shop::layouts.header.nav-menu.navmenu')
+        </div>
     </div>
 
     <div class="search-responsive mt-10" id="search-responsive">

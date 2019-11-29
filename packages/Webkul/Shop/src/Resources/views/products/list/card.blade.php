@@ -1,7 +1,6 @@
 {!! view_render_event('bagisto.shop.products.list.card.before', ['product' => $product]) !!}
 
-<div class="product-card">
-
+<div class="col col-lg-3 mb-5 border-b">
     @inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
 
     <?php $productBaseImage = $productImageHelper->getProductBaseImage($product); ?>
@@ -14,13 +13,13 @@
 
     <div class="product-image">
         <a href="{{ route('shop.products.index', $product->url_key) }}" title="{{ $product->name }}">
-            <img src="{{ $productBaseImage['medium_image_url'] }}" onerror="this.src='{{ asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png') }}'"/>
+            <img class="img-fluid" src="{{ $productBaseImage['medium_image_url'] }}" onerror="this.src='{{ asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png') }}'"/>
         </a>
     </div>
 
-    <div class="product-information">
+    <div class="product-information mt-2">
 
-        <div class="product-name">
+        <div class="product-name text-center mb-2">
             <a href="{{ url()->to('/').'/products/' . $product->url_key }}" title="{{ $product->name }}">
                 <span>
                     {{ $product->name }}

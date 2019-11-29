@@ -11,7 +11,6 @@
 
 @section('content-wrapper')
     @inject ('productRepository', 'Webkul\Product\Repositories\ProductRepository')
-
     <div class="main container">
         {!! view_render_event('bagisto.shop.products.index.before', ['category' => $category]) !!}
 
@@ -46,13 +45,13 @@
                         @inject ('toolbarHelper', 'Webkul\Product\Helpers\Toolbar')
 
                         @if ($toolbarHelper->getCurrentMode() == 'grid')
-{{--                            <div class="col-xs-3">--}}
-                                @foreach ($products as $productFlat)
+                            {{--                            <div class="col-xs-3">--}}
+                            @foreach ($products as $productFlat)
 
-                                    @include ('shop::products.list.card', ['product' => $productFlat])
+                                @include ('shop::products.list.card', ['product' => $productFlat])
 
-                                @endforeach
-{{--                            </div>--}}
+                            @endforeach
+                            {{--                            </div>--}}
                         @else
                             <div class="product-list">
                                 @foreach ($products as $productFlat)
@@ -88,58 +87,61 @@
 
         {!! view_render_event('bagisto.shop.products.index.after', ['category' => $category]) !!}
     </div>
-{{--    <div class="container-fluid">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-lg-12">--}}
-{{--                <div class="hero-image mb-35">--}}
-{{--                    @if (!is_null($category->image))--}}
-{{--                        <img class="logo" src="{{ $category->image_url }}"/>--}}
-{{--                    @endif--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-lg-12">--}}
 
-{{--                @if ($products->count())--}}
 
-{{--                    @include ('shop::products.list.toolbar')--}}
+            <div class="container-fluid no-padding">
+            <div class="row ">
+                <div class="col-lg-12 no-padding">
+                    <div class="hero-image mb-35">
+                        @if (!is_null($category->image))
+                            <img class="logo  img-fluid" src="{{ $category->image_url }}"/>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
 
-{{--                    @inject ('toolbarHelper', 'Webkul\Product\Helpers\Toolbar')--}}
+                    @if ($products->count())
 
-{{--                    @if ($toolbarHelper->getCurrentMode() == 'grid')--}}
-{{--                        <div class="col-xs-3">--}}
-{{--                            @foreach ($products as $productFlat)--}}
+                        @include ('shop::products.list.toolbar')
 
-{{--                                @include ('shop::products.list.card', ['product' => $productFlat])--}}
+                        @inject ('toolbarHelper', 'Webkul\Product\Helpers\Toolbar')
 
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-{{--                    @else--}}
-{{--                        <div class="product-list">--}}
-{{--                            @foreach ($products as $productFlat)--}}
+                        @if ($toolbarHelper->getCurrentMode() == 'grid')
+                            <div class="row">
+                                @foreach ($products as $productFlat)
 
-{{--                                @include ('shop::products.list.card', ['product' => $productFlat])--}}
+                                    @include ('shop::products.list.card', ['product' => $productFlat])
 
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
+                                @endforeach
+                            </div>
+                        @else
+                            <div class="product-list">
+                                @foreach ($products as $productFlat)
 
-{{--                    {!! view_render_event('bagisto.shop.products.index.pagination.before', ['category' => $category]) !!}--}}
-{{--                @else--}}
+                                    @include ('shop::products.list.card', ['product' => $productFlat])
 
-{{--                    <div class="product-list empty">--}}
-{{--                        <h2>{{ __('shop::app.products.whoops') }}</h2>--}}
+                                @endforeach
+                            </div>
+                        @endif
 
-{{--                        <p>--}}
-{{--                            {{ __('shop::app.products.empty') }}--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
+                        {!! view_render_event('bagisto.shop.products.index.pagination.before', ['category' => $category]) !!}
+                    @else
 
-{{--                @endif--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+                        <div class="product-list empty">
+                            <h2>{{ __('shop::app.products.whoops') }}</h2>
+
+                            <p>
+                                {{ __('shop::app.products.empty') }}
+                            </p>
+                        </div>
+
+                    @endif
+                </div>
+            </div>
+        </div>
+
 @stop
 
 @push('scripts')

@@ -31,6 +31,12 @@ return [
         'name' => 'shop::app.layouts.orders',
         'route' =>'customer.orders.index',
         'sort' => 5
+    ],
+    [
+        'key' => 'account.orders',
+        'name' => 'shop::app.layouts.orders',
+        'route' =>'customer.orders.index',
+        'sort' => 5
     ]
 
 ];

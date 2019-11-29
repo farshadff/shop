@@ -1,6 +1,6 @@
 {!! view_render_event('bagisto.shop.products.price.before', ['product' => $product]) !!}
 
-<div class="product-price">
+<div class="product-price text-center mb-2">
     @inject ('priceHelper', 'Webkul\Product\Helpers\Price')
 
     @if ($product->type == 'configurable')
@@ -12,7 +12,6 @@
             <div class="sticker sale">
                 {{ __('shop::app.products.sale') }}
             </div>
-
             <span class="regular-price">{{ core()->currency($product->price) }}</span>
 
             <span class="special-price">{{ core()->currency($priceHelper->getSpecialPrice($product)) }}</span>

@@ -14,6 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+//        $this->mergeConfigFrom(
+//            dirname(__DIR__) . '\Config\menu.php', 'menu.customer'
+//        );
         Schema::defaultStringLength(191);
     }
 

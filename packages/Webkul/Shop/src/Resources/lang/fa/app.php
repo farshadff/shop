@@ -37,7 +37,7 @@ return [
         'wishlist' => 'لیست دلخواه',
         'cart' => 'سبد خرید',
         'logout' => 'خروج',
-        'search-text' => 'محصولات را در اینجا جستجو کنید'
+        'search-text' => 'جستجو'
     ],
 
     'minicart' => [
@@ -90,8 +90,8 @@ return [
 
     'customer' => [
         'signup-text' => [
-            'account_exists' => 'قبلاً حساب داشته باشید',
-            'title' => 'ورود'
+            'account_exists' => 'قبلاً حساب داشته اید',
+            'title' => 'وارد شوید'
         ],
 
         'signup-form' => [
@@ -455,9 +455,9 @@ return [
 
         'total' => [
             'order-summary' => 'خلاصه سفارش',
-            'sub-total' => 'موارد',
-            'grand-total' => 'بزرگ توتال',
-            'delivery-charges' => 'هزینه های تحویل',
+            'sub-total' => 'مورد ,',
+            'grand-total' => 'مجموع کل',
+            'delivery-charges' => 'هزینه ارسال',
             'tax' => 'مالیات',
             'discount' => 'تخفیف',
             'price' => 'قیمت',
@@ -487,7 +487,7 @@ return [
             'greeting-admin' => 'شماره سفارش :order_id قرار داده شده در :created_at',
             'summary' => 'خلاصه سفارش',
             'shipping-address' => 'آدرس حمل و نقل',
-            'billing-address' => 'آدرس قبض',
+            'billing-address' => 'آدرس فاکتور',
             'contact' => 'تماس',
             'shipping' => 'روش حمل و نقل',
             'payment' => 'روش پرداخت',
@@ -527,7 +527,7 @@ return [
             'adjustment-refund' => 'Adjustment Refund',
             'adjustment-fee' => 'Adjustment Fee'
         ],
-        
+
         'forget-password' => [
             'dear' => 'عزیز :name',
             'info' => 'شما این ایمیل را دریافت می کنید زیرا ما درخواست بازنشانی رمزعبور را برای حساب شما دریافت کردیم',
