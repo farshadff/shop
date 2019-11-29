@@ -12,7 +12,7 @@
 @section('content-wrapper')
     @inject ('productRepository', 'Webkul\Product\Repositories\ProductRepository')
 
-    <div class="main">
+    <div class="main container">
         {!! view_render_event('bagisto.shop.products.index.before', ['category' => $category]) !!}
 
         <div class="category-container">
@@ -24,7 +24,7 @@
             <div class="category-block" @if ($category->display_mode == 'description_only') style="width: 100%" @endif>
                 <div class="hero-image mb-35">
                     @if (!is_null($category->image))
-                        <img class="logo" src="{{ $category->image_url }}" />
+                        <img class="logo" src="{{ $category->image_url }}"/>
                     @endif
                 </div>
 
@@ -46,13 +46,13 @@
                         @inject ('toolbarHelper', 'Webkul\Product\Helpers\Toolbar')
 
                         @if ($toolbarHelper->getCurrentMode() == 'grid')
-                            <div class="product-grid-3">
+{{--                            <div class="col-xs-3">--}}
                                 @foreach ($products as $productFlat)
 
                                     @include ('shop::products.list.card', ['product' => $productFlat])
 
                                 @endforeach
-                            </div>
+{{--                            </div>--}}
                         @else
                             <div class="product-list">
                                 @foreach ($products as $productFlat)
@@ -88,34 +88,86 @@
 
         {!! view_render_event('bagisto.shop.products.index.after', ['category' => $category]) !!}
     </div>
+{{--    <div class="container-fluid">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <div class="hero-image mb-35">--}}
+{{--                    @if (!is_null($category->image))--}}
+{{--                        <img class="logo" src="{{ $category->image_url }}"/>--}}
+{{--                    @endif--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-12">--}}
+
+{{--                @if ($products->count())--}}
+
+{{--                    @include ('shop::products.list.toolbar')--}}
+
+{{--                    @inject ('toolbarHelper', 'Webkul\Product\Helpers\Toolbar')--}}
+
+{{--                    @if ($toolbarHelper->getCurrentMode() == 'grid')--}}
+{{--                        <div class="col-xs-3">--}}
+{{--                            @foreach ($products as $productFlat)--}}
+
+{{--                                @include ('shop::products.list.card', ['product' => $productFlat])--}}
+
+{{--                            @endforeach--}}
+{{--                        </div>--}}
+{{--                    @else--}}
+{{--                        <div class="product-list">--}}
+{{--                            @foreach ($products as $productFlat)--}}
+
+{{--                                @include ('shop::products.list.card', ['product' => $productFlat])--}}
+
+{{--                            @endforeach--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+
+{{--                    {!! view_render_event('bagisto.shop.products.index.pagination.before', ['category' => $category]) !!}--}}
+{{--                @else--}}
+
+{{--                    <div class="product-list empty">--}}
+{{--                        <h2>{{ __('shop::app.products.whoops') }}</h2>--}}
+
+{{--                        <p>--}}
+{{--                            {{ __('shop::app.products.empty') }}--}}
+{{--                        </p>--}}
+{{--                    </div>--}}
+
+{{--                @endif--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 @stop
 
 @push('scripts')
     <script>
-        $(document).ready(function() {
-            $('.responsive-layred-filter').css('display','none');
-            $(".sort-icon, .filter-icon").on('click', function(e){
+        $(document).ready(function () {
+            $('.responsive-layred-filter').css('display', 'none');
+            $(".sort-icon, .filter-icon").on('click', function (e) {
                 var currentElement = $(e.currentTarget);
                 if (currentElement.hasClass('sort-icon')) {
                     currentElement.removeClass('sort-icon');
                     currentElement.addClass('icon-menu-close-adj');
                     currentElement.next().removeClass();
                     currentElement.next().addClass('icon filter-icon');
-                    $('.responsive-layred-filter').css('display','none');
-                    $('.pager').css('display','flex');
-                    $('.pager').css('justify-content','space-between');
+                    $('.responsive-layred-filter').css('display', 'none');
+                    $('.pager').css('display', 'flex');
+                    $('.pager').css('justify-content', 'space-between');
                 } else if (currentElement.hasClass('filter-icon')) {
                     currentElement.removeClass('filter-icon');
                     currentElement.addClass('icon-menu-close-adj');
                     currentElement.prev().removeClass();
                     currentElement.prev().addClass('icon sort-icon');
-                    $('.pager').css('display','none');
-                    $('.responsive-layred-filter').css('display','block');
-                    $('.responsive-layred-filter').css('margin-top','10px');
+                    $('.pager').css('display', 'none');
+                    $('.responsive-layred-filter').css('display', 'block');
+                    $('.responsive-layred-filter').css('margin-top', '10px');
                 } else {
                     currentElement.removeClass('icon-menu-close-adj');
-                    $('.responsive-layred-filter').css('display','none');
-                    $('.pager').css('display','none');
+                    $('.responsive-layred-filter').css('display', 'none');
+                    $('.pager').css('display', 'none');
                     if ($(this).index() == 0) {
                         currentElement.addClass('sort-icon');
                     } else {
