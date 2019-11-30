@@ -1,0 +1,23 @@
+.sticker .new{
+    position: absolute;
+    background: #1eca5a;
+    border-radius: 20px;
+}
+.sticker.new {
+    background: #2ed04c
+}
+.sticker {
+    border-radius: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-transform: uppercase;
+    padding: 4px 13px;
+    font-size: 14px;
+    color: #fff;
+    -webkit-box-shadow: 1px 1px 1px #ccc;
+    box-shadow: 1px 1px 1px #ccc
+}
+.sticker.sale {
+    background: #ff6472
+}

@@ -1,12 +1,6 @@
 /node_modules
-/public/hot
-/public/storage
-/public/css
-/public/js
 /public/vendor
-/public/themes
 /storage/*.key
-/vendor
 /.idea
 /.vscode
 /.vagrant
@@ -19,3 +13,4 @@ yarn-error.log
 composer.lock
 package-lock.json
 yarn.lock
+/vendor
