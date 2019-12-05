@@ -125,7 +125,7 @@ body {
 }
 
 .navbar-left ul.menubar li.menu-item.active a {
-    color: #0041ff
+    color: #d11e26
 }
 
 .navbar-left ul.menubar li.menu-item span {
@@ -286,7 +286,7 @@ body {
 }
 
 .control-container .control:focus {
-    border-color: #0041ff
+    border-color: #d11e26
 }
 
 .control-container .icon:hover {
@@ -394,7 +394,7 @@ body {
 }
 
 .dashboard .card .card-info ul li .description .name {
-    color: #0041ff
+    color: #d11e26
 }
 
 .dashboard .card .card-info ul li .description .info {
@@ -450,7 +450,7 @@ body {
 .dashboard .dashboard-stats .dashboard-card .data {
     padding-top: 13px;
     font-size: 32px;
-    color: #0041ff
+    color: #d11e26
 }
 
 .dashboard .dashboard-stats .dashboard-card .data .progress {

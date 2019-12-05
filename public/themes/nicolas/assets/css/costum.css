@@ -21,3 +21,114 @@
 .sticker.sale {
     background: #ff6472
 }
+.padding-0 {
+    padding-left:0px !important; ;
+    padding-right:0px !important; ;
+}
+.caption-hero {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 8%;
+    background-color: #363944;
+    opacity: .8;
+}
+.light-color {
+    color: #fff;
+}
+.caption-hero-2 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 8%;
+    /*background-color: #363944;*/
+    /*opacity: .8;*/
+}
+.caption-hero-3 {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 8%;
+    background-color: #193462;
+    opacity: .8;
+}
+
+
+.text-box-1 {
+    left: 20px;
+    width: 500px;
+}
+.text-box-2 {
+    right: 20px;
+    width: 500px;
+}
+body {
+    overflow-x: hidden;
+}
+
+/*bottons*/
+/* General button style (reset) */
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 20px 70px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+/* Button 1e */
+.btn-1e {
+    overflow: hidden;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+
+}
+
+.btn-1e:after {
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.btn-1e:hover,
+.btn-1e:active {
+    color: #0e83cd;
+}
+
+.btn-1e:hover:after {
+    height: 260%;
+    opacity: 1;
+}
+
+.btn-1e:active:after {
+    height: 400%;
+    opacity: 1;
+}
