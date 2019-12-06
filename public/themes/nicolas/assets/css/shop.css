@@ -941,7 +941,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 
 .header {
     margin-top: 16px;
-    margin-bottom: 21px;
+    /*margin-bottom: 21px;*/
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -1476,7 +1476,11 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .footer {
-    background-color: #f2f2f2;
+    background-color: #323232;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    color: #fff;
     padding-left: 10%;
     padding-right: 10%;
     width: 100%;
@@ -1501,7 +1505,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .footer .footer-content .footer-list-container .list-container .list-group a {
-    color: #242424
+    color: #fff;
 }
 
 .footer .footer-content .footer-list-container .list-container .list-group li {
@@ -2613,7 +2617,7 @@ section.cart .cart-content .right-side {
     margin-right: 5%
 }
 
-.checkout-process .col-main ul.checkout-steps {
+.checkout-process .fill-data ul.checkout-steps {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -2625,14 +2629,14 @@ section.cart .cart-content .right-side {
     border-bottom: 1px solid #c7c7c7
 }
 
-.checkout-process .col-main ul.checkout-steps li {
+.checkout-process .fill-data ul.checkout-steps li {
     height: 48px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex
 }
 
-.checkout-process .col-main ul.checkout-steps li .decorator {
+.checkout-process .fill-data ul.checkout-steps li .decorator {
     height: 48px;
     width: 48px;
     border: 1px solid #000;
@@ -2645,49 +2649,49 @@ section.cart .cart-content .right-side {
     background-position: 50%
 }
 
-.checkout-process .col-main ul.checkout-steps li .decorator.address-info {
+.checkout-process .fill-data ul.checkout-steps li .decorator.address-info {
     background-image: url("../images/address.svg")
 }
 
-.checkout-process .col-main ul.checkout-steps li .decorator.shipping {
+.checkout-process .fill-data ul.checkout-steps li .decorator.shipping {
     background-image: url("../images/shipping.svg")
 }
 
-.checkout-process .col-main ul.checkout-steps li .decorator.payment {
+.checkout-process .fill-data ul.checkout-steps li .decorator.payment {
     background-image: url("../images/payment.svg")
 }
 
-.checkout-process .col-main ul.checkout-steps li .decorator.review {
+.checkout-process .fill-data ul.checkout-steps li .decorator.review {
     background-image: url("../images/finish.svg")
 }
 
-.checkout-process .col-main ul.checkout-steps li.completed {
+.checkout-process .fill-data ul.checkout-steps li.completed {
     cursor: pointer
 }
 
-.checkout-process .col-main ul.checkout-steps li.completed .decorator {
+.checkout-process .fill-data ul.checkout-steps li.completed .decorator {
     background-image: url("../images/complete.svg")
 }
 
-.checkout-process .col-main ul.checkout-steps li span {
+.checkout-process .fill-data ul.checkout-steps li span {
     margin-left: 7px;
     margin-top: auto;
     margin-bottom: auto
 }
 
-.checkout-process .col-main ul.checkout-steps li.active {
+.checkout-process .fill-data ul.checkout-steps li.active {
     color: #2650ef
 }
 
-.checkout-process .col-main ul.checkout-steps li.active .decorator {
+.checkout-process .fill-data ul.checkout-steps li.active .decorator {
     border: 1px solid #2650ef
 }
 
-.checkout-process .col-main .step-content {
+.checkout-process .fill-data .step-content {
     padding-top: 20px
 }
 
-.checkout-process .col-main .step-content .form-header {
+.checkout-process .fill-data .step-content .form-header {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -2701,41 +2705,41 @@ section.cart .cart-content .right-side {
     height: 30px
 }
 
-.checkout-process .col-main .step-content .form-header .checkout-step-heading {
+.checkout-process .fill-data .step-content .form-header .checkout-step-heading {
     font-size: 24px;
     font-weight: 700;
     float: left
 }
 
-.checkout-process .col-main .step-content .form-header .btn {
+.checkout-process .fill-data .step-content .form-header .btn {
     float: right;
     font-size: 14px
 }
 
-.checkout-process .col-main .step-content .form-container {
+.checkout-process .fill-data .step-content .form-container {
     border-bottom: 1px solid #c7c7c7;
     padding-top: 20px;
     padding-bottom: 20px
 }
 
-.checkout-process .col-main .step-content .shipping-methods {
+.checkout-process .fill-data .step-content .shipping-methods {
     font-size: 16px
 }
 
-.checkout-process .col-main .step-content .shipping-methods .ship-method-carrier {
+.checkout-process .fill-data .step-content .shipping-methods .ship-method-carrier {
     margin-bottom: 15px;
     font-weight: 700
 }
 
-.checkout-process .col-main .step-content .payment-methods .radio-container {
+.checkout-process .fill-data .step-content .payment-methods .radio-container {
     padding-left: 28px
 }
 
-.checkout-process .col-main .step-content .payment-methods .control-info {
+.checkout-process .fill-data .step-content .payment-methods .control-info {
     margin-left: 28px
 }
 
-.checkout-process .col-main .step-content .address-summary {
+.checkout-process .fill-data .step-content .address-summary {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2752,24 +2756,24 @@ section.cart .cart-content .right-side {
     width: 100%
 }
 
-.checkout-process .col-main .step-content .address-summary div.billing-address {
+.checkout-process .fill-data .step-content .address-summary div.billing-address {
     margin-right: 25%
 }
 
-.checkout-process .col-main .step-content .address-summary div.billing-address .horizontal-rule, .checkout-process .col-main .step-content .address-summary div.shipping-address .horizontal-rule {
+.checkout-process .fill-data .step-content .address-summary div.billing-address .horizontal-rule, .checkout-process .fill-data .step-content .address-summary div.shipping-address .horizontal-rule {
     width: 40px;
     background: #242424
 }
 
-.checkout-process .col-main .step-content .address-summary .label {
+.checkout-process .fill-data .step-content .address-summary .label {
     width: 10%
 }
 
-.checkout-process .col-main .step-content .address-summary .address-card-list {
+.checkout-process .fill-data .step-content .address-summary .address-card-list {
     width: 85%
 }
 
-.checkout-process .col-main .step-content .cart-item-list .item .row .title {
+.checkout-process .fill-data .step-content .cart-item-list .item .row .title {
     width: 100px;
     display: inline-block;
     color: #a5a5a5;
@@ -2777,21 +2781,21 @@ section.cart .cart-content .right-side {
     margin-bottom: 10px
 }
 
-.checkout-process .col-main .step-content .cart-item-list .item .row .value {
+.checkout-process .fill-data .step-content .cart-item-list .item .row .value {
     font-size: 18px;
     font-weight: 600
 }
 
-.checkout-process .col-main .step-content .order-description {
+.checkout-process .fill-data .step-content .order-description {
     display: inline-block;
     width: 100%
 }
 
-.checkout-process .col-main .step-content .order-description .shipping {
+.checkout-process .fill-data .step-content .order-description .shipping {
     margin-bottom: 25px
 }
 
-.checkout-process .col-main .step-content .order-description .decorator {
+.checkout-process .fill-data .step-content .order-description .decorator {
     height: 48px;
     width: 48px;
     border-radius: 50%;
@@ -2801,17 +2805,17 @@ section.cart .cart-content .right-side {
     text-align: center
 }
 
-.checkout-process .col-main .step-content .order-description .decorator .icon {
+.checkout-process .fill-data .step-content .order-description .decorator .icon {
     margin-top: 7px
 }
 
-.checkout-process .col-main .step-content .order-description .text {
+.checkout-process .fill-data .step-content .order-description .text {
     font-weight: 600;
     vertical-align: middle;
     display: inline-block
 }
 
-.checkout-process .col-main .step-content .order-description .text .info {
+.checkout-process .fill-data .step-content .order-description .text .info {
     font-weight: 500;
     margin-top: 2px
 }
@@ -2822,21 +2826,21 @@ section.cart .cart-content .right-side {
 }
 
 @media only screen and (max-width: 770px) {
-    .checkout-process .col-main {
+    .checkout-process .fill-data {
         width: 100%;
         padding-right: 0
     }
 
-    .checkout-process .col-main ul.checkout-steps {
+    .checkout-process .fill-data ul.checkout-steps {
         border-bottom: none;
         padding-bottom: 0
     }
 
-    .checkout-process .col-main ul.checkout-steps span {
+    .checkout-process .fill-data ul.checkout-steps span {
         display: none
     }
 
-    .checkout-process .col-main ul.checkout-steps .line {
+    .checkout-process .fill-data ul.checkout-steps .line {
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
@@ -2859,7 +2863,7 @@ section.cart .cart-content .right-side {
 }
 
 @media only screen and (max-width: 480px) {
-    .checkout-process .col-main .step-content .address, .checkout-process .col-main .step-content .order-description {
+    .checkout-process .fill-data .step-content .address, .checkout-process .fill-data .step-content .order-description {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -2869,11 +2873,11 @@ section.cart .cart-content .right-side {
         flex-direction: column
     }
 
-    .checkout-process .col-main .step-content .address .billing-address, .checkout-process .col-main .step-content .address .pull-left, .checkout-process .col-main .step-content .order-description .billing-address, .checkout-process .col-main .step-content .order-description .pull-left {
+    .checkout-process .fill-data .step-content .address .billing-address, .checkout-process .fill-data .step-content .address .pull-left, .checkout-process .fill-data .step-content .order-description .billing-address, .checkout-process .fill-data .step-content .order-description .pull-left {
         width: 100% !important
     }
 
-    .checkout-process .col-main .step-content .address .pull-right, .checkout-process .col-main .step-content .address .shipping-address, .checkout-process .col-main .step-content .order-description .pull-right, .checkout-process .col-main .step-content .order-description .shipping-address {
+    .checkout-process .fill-data .step-content .address .pull-right, .checkout-process .fill-data .step-content .address .shipping-address, .checkout-process .fill-data .step-content .order-description .pull-right, .checkout-process .fill-data .step-content .order-description .shipping-address {
         width: 100% !important;
         margin-top: 20px
     }
@@ -3287,7 +3291,7 @@ section.review .review-layouter .ratings-reviews .right-side .rater .line-bar .l
 }
 
 .account-content .menu-block .menubar li.active a {
-    color: #0031f0
+    color: #d11e26
 }
 
 .account-content .menu-block .menubar li.active .icon {
@@ -4064,34 +4068,34 @@ section.review .review-layouter .ratings-reviews .right-side .rater .line-bar .l
     padding-right: 40px
 }
 
-.rtl .checkout-process .col-main {
-    padding-left: 40px;
-    padding-right: 0
-}
+/*.rtl .checkout-process .fill-data {*/
+/*    padding-left: 40px;*/
+/*    padding-right: 0*/
+/*}*/
 
-.rtl .checkout-process .col-main ul.checkout-steps li span {
+.rtl .checkout-process .fill-data ul.checkout-steps li span {
     margin-right: 7px;
     margin-left: 0
 }
 
-.rtl .checkout-process .col-main .step-content .form-header h1 {
+.rtl .checkout-process .fill-data .step-content .form-header h1 {
     float: right
 }
 
-.rtl .checkout-process .col-main .step-content .form-header .btn {
+.rtl .checkout-process .fill-data .step-content .form-header .btn {
     float: left
 }
 
-.rtl .checkout-process .col-main .step-content .payment-methods .control-info {
+.rtl .checkout-process .fill-data .step-content .payment-methods .control-info {
     margin-right: 28px;
     margin-left: 0
 }
 
-.rtl .checkout-process .col-main .step-content .address .billing-address, .rtl .checkout-process .col-main .step-content .address .pull-left, .rtl .checkout-process .col-main .step-content .order-description .billing-address, .rtl .checkout-process .col-main .step-content .order-description .pull-left {
+.rtl .checkout-process .fill-data .step-content .address .billing-address, .rtl .checkout-process .fill-data .step-content .address .pull-left, .rtl .checkout-process .fill-data .step-content .order-description .billing-address, .rtl .checkout-process .fill-data .step-content .order-description .pull-left {
     float: right !important
 }
 
-.rtl .checkout-process .col-main .step-content .address .pull-right, .rtl .checkout-process .col-main .step-content .address .shipping-address, .rtl .checkout-process .col-main .step-content .order-description .pull-right, .rtl .checkout-process .col-main .step-content .order-description .shipping-address {
+.rtl .checkout-process .fill-data .step-content .address .pull-right, .rtl .checkout-process .fill-data .step-content .address .shipping-address, .rtl .checkout-process .fill-data .step-content .order-description .pull-right, .rtl .checkout-process .fill-data .step-content .order-description .shipping-address {
     float: left !important
 }
 
@@ -4110,7 +4114,7 @@ section.review .review-layouter .ratings-reviews .right-side .rater .line-bar .l
 }
 
 @media only screen and (max-width: 770px) {
-    .rtl .checkout-process .col-main {
+    .rtl .checkout-process .fill-data {
         padding-left: 0
     }
 }

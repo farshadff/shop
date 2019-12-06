@@ -7,10 +7,10 @@
         <div class="shipping-methods">
 
             <div class="control-group" :class="[errors.has('shipping-form.shipping_method') ? 'has-error' : '']">
-
+                <div class="row">
                 @foreach ($shippingRateGroups as $rateGroup)
                     {!! view_render_event('bagisto.shop.checkout.shipping-method.before', ['rateGroup' => $rateGroup]) !!}
-
+                    <div class="col-lg-6 p-5 shipment-box">
                     <span class="carrier-title" id="carrier-title" style="font-size:18px; font-weight: bold;">
                         {{ $rateGroup['carrier_title'] }}
                     </span>
@@ -34,11 +34,11 @@
                         </div>
 
                     @endforeach
-
+                    </div>
                     {!! view_render_event('bagisto.shop.checkout.shipping-method.after', ['rateGroup' => $rateGroup]) !!}
 
                 @endforeach
-
+                </div>
                 <span class="control-error" v-if="errors.has('shipping-form.shipping_method')">
                     @{{ errors.first('shipping-form.shipping_method') }}
                 </span>

@@ -11,7 +11,7 @@
 @push('scripts')
     <script type="text/x-template" id="checkout-template">
         <div id="checkout" class="checkout-process">
-            <div class="col-main">
+            <div class="col-lg-9 fill-data">
                 <ul class="checkout-steps">
                     <li class="active" :class="[completedStep >= 0 ? 'active' : '', completedStep > 0 ? 'completed' : '']" @click="navigateToStep(1)">
                         <div class="decorator address-info"></div>
@@ -91,7 +91,7 @@
                 </div>
             </div>
 
-            <div class="col-right" v-show="currentStep != 4">
+            <div class="col-lg-3 mt-25" v-show="currentStep != 4">
                 <summary-section :key="summeryComponentKey"></summary-section>
             </div>
         </div>

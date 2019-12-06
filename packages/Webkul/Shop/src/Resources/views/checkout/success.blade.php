@@ -6,7 +6,7 @@
 
 @section('content-wrapper')
 
-    <div class="order-success-content" style="min-height: 300px;">
+    <div class="order-success-content col-lg-12 text-center mt-50" style="min-height: 300px;">
         <h1>{{ __('shop::app.checkout.success.thanks') }}</h1>
 
         <p>{{ __('shop::app.checkout.success.order-id-info', ['order_id' => $order->increment_id]) }}</p>
@@ -20,8 +20,8 @@
                 {{ __('shop::app.checkout.cart.continue-shopping') }}
             </a>
         </div>
-        
+
         {{ view_render_event('bagisto.shop.checkout.continue-shopping.after', ['order' => $order]) }}
-        
+
     </div>
 @endsection

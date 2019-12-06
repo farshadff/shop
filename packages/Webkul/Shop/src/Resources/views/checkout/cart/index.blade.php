@@ -6,7 +6,7 @@
 
 @section('content-wrapper')
     @inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
-    <section class="cart">
+    <section class="cart text-center">
         @if ($cart)
             <div class="title">
                 {{ __('shop::app.checkout.cart.title') }}

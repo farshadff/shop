@@ -2,7 +2,7 @@
 
 return [
     'wishlist' => [
-        'success' => 'Item Successfully Added To Wishlist',
+        'success' => 'به لیست علاقه مندی ها اضافه شد',
         'failure' => 'Item Cannot Be Added To Wishlist',
         'already' => 'Item Already Present In Your Wishlist',
         'removed' => 'Item Successfully Removed From Wishlist',
@@ -12,6 +12,6 @@ return [
         'remove-all-success' => 'All The Items From Your Wishlist Have Been Removed',
     ],
     'reviews' => [
-        'empty' => 'You have not reviewed any of product yet'
+        'empty' => 'شما هیچ محصولی را بررسی نکرده اید'
     ]
 ];

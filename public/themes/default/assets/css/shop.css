@@ -1476,7 +1476,11 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .footer {
-    background-color: #f2f2f2;
+    background-color: #323232;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    color: #fff;
     padding-left: 10%;
     padding-right: 10%;
     width: 100%;

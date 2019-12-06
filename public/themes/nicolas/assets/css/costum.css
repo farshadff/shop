@@ -132,3 +132,9 @@ body {
     height: 400%;
     opacity: 1;
 }
+.fill-data {
+    padding: 25px;
+}
+.shipment-box {
+    /*border:1px dashed #b5b5b5;*/
+}

@@ -9,7 +9,7 @@
     <div class="account-content">
         @include('shop::customers.account.partials.sidemenu')
 
-        <div class="account-layout">
+        <div class="account-layout col-lg-9">
 
             <div class="account-head">
                 <span class="back-icon"><a href="{{ route('customer.account.index') }}"><i class="icon icon-menu-back"></i></a></span>
@@ -68,7 +68,7 @@
                                                     <td data-value="{{ __('shop::app.customer.account.order.view.SKU') }}">
                                                         {{ $item->type == 'configurable' ? $item->child->sku : $item->sku }}
                                                     </td>
-                                                    
+
                                                     <td data-value="{{ __('shop::app.customer.account.order.view.product-name') }}">
                                                         {{ $item->name }} <br>
                                                         @if (isset($item['additional']['attributes']))

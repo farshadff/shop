@@ -10,7 +10,7 @@
 
     @include('shop::customers.account.partials.sidemenu')
 
-    <div class="account-layout">
+    <div class="account-layout col-lg-9">
 
         <div class="account-head">
             <span class="back-icon"><a href="{{ route('customer.account.index') }}"><i class="icon icon-menu-back"></i></a></span>

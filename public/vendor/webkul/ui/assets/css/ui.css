@@ -381,7 +381,7 @@
 }
 
 .search-filter .contorl:focus {
-    border-color: #0041ff
+    border-color: #d11e26
 }
 
 .search-filter .icon-wrapper {
@@ -670,7 +670,7 @@ body {
 
 a:active, a:focus, a:hover, a:link, a:visited {
     text-decoration: none;
-    color: #0041ff
+    color: #d11e26
 }
 
 ::-moz-selection {
@@ -779,7 +779,7 @@ h5 {
 }
 
 .btn.btn-primary {
-    background: #0041ff;
+    background: #d11e26;
     color: #fff
 }
 
@@ -886,7 +886,7 @@ h5 {
 }
 
 .dropdown-list .search-box .control:focus {
-    border-color: #0041ff
+    border-color: #d11e26
 }
 
 .dropdown-list .dropdown-container {
@@ -919,7 +919,7 @@ h5 {
 }
 
 .dropdown-list .dropdown-container ul li a:hover {
-    color: #0041ff
+    color: #d11e26
 }
 
 .dropdown-list .dropdown-container ul li .checkbox {
@@ -1006,9 +1006,9 @@ h5 {
 }
 
 .pagination .page-item.active {
-    background: #0041ff;
+    background: #d11e26;
     color: #fff;
-    border-color: #0041ff
+    border-color: #d11e26
 }
 
 .pagination .page-item .icon {
@@ -1128,7 +1128,7 @@ h5 {
 }
 
 .control-group .control:focus {
-    border-color: #0041ff
+    border-color: #d11e26
 }
 
 .control-group .control[disabled=disabled] {
@@ -1217,12 +1217,12 @@ h5 {
 }
 
 .control-group input:checked + .slider {
-    background-color: #0041ff
+    background-color: #d11e26
 }
 
 .control-group input:focus + .slider {
-    -webkit-box-shadow: 0 0 1px #0041ff;
-    box-shadow: 0 0 1px #0041ff
+    -webkit-box-shadow: 0 0 1px #d11e26;
+    box-shadow: 0 0 1px #d11e26
 }
 
 .control-group input:checked + .slider:before {
@@ -1316,7 +1316,7 @@ h5 {
 }
 
 .tabs ul li.active a {
-    border-bottom: 3px solid #0041ff
+    border-bottom: 3px solid #d11e26
 }
 
 .accordian, accordian {
@@ -1555,7 +1555,7 @@ modal {
 }
 
 .badge.badge-info {
-    background-color: #0041ff
+    background-color: #d11e26
 }
 
 .badge.badge-danger {

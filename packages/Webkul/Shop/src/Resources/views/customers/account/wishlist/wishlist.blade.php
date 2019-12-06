@@ -7,7 +7,7 @@
 
     @include('shop::customers.account.partials.sidemenu')
 
-    <div class="account-layout">
+    <div class="account-layout col-lg-9">
 
         <div class="account-head mb-15">
             <span class="account-heading">{{ __('shop::app.wishlist.title') }}</span>
