@@ -212,7 +212,6 @@
                 @{{ errors.first('address-form.billing[phone]') }}
             </span>
         </div>
-
         <div class="control-group">
             <span class="checkbox">
                 <input type="checkbox" id="billing[use_for_shipping]" name="billing[use_for_shipping]" v-model="address.billing.use_for_shipping"/>

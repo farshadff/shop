@@ -27,7 +27,7 @@
                     </div>
                 @endif
 
-                <div class="product-grid-4">
+                <div class="row">
                     @foreach ($results as $productFlat)
 
                         @include('shop::products.list.card', ['product' => $productFlat->product])
