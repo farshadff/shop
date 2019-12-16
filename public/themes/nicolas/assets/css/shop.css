@@ -2680,11 +2680,11 @@ section.cart .cart-content .right-side {
 }
 
 .checkout-process .fill-data ul.checkout-steps li.active {
-    color: #2650ef
+    color: #d11e26
 }
 
 .checkout-process .fill-data ul.checkout-steps li.active .decorator {
-    border: 1px solid #2650ef
+    border: 1px solid #d11e26
 }
 
 .checkout-process .fill-data .step-content {

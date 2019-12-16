@@ -424,9 +424,21 @@ class Core
         if (is_null($price))
             $price = 0;
 
-        $formatter = new \NumberFormatter( app()->getLocale(), \NumberFormatter::CURRENCY );
+        $formater = new \NumberFormatter( app()->getLocale(), \NumberFormatter::CURRENCY );
 
-        return $formatter->formatCurrency($price, $currencyCode);
+        $formater->setAttribute( $formater::FRACTION_DIGITS, 0 );
+
+        if ($symbol = $this->getCurrentCurrency()->symbol) {
+            if ($this->currencySymbol($currencyCode) == $symbol) {
+                return $formater->formatCurrency($price, $currencyCode);
+            } else {
+                $formater->setSymbol(\NumberFormatter::CURRENCY_SYMBOL, $symbol);
+
+                return $formater->format($this->convertPrice($price));
+            }
+        } else {
+            return $formater->formatCurrency($price, $currencyCode);
+        }
     }
 
     /**

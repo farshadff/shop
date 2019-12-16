@@ -246,7 +246,8 @@ return [
         Webkul\API\Providers\APIServiceProvider::class,
         Webkul\Discount\Providers\DiscountServiceProvider::class,
         Webkul\CMS\Providers\CMSServiceProvider::class,
-        nicolas\Payment\Providers\PaymentServiceProvider::class
+        nicolas\Guarantee\Providers\GuaranteeServiceProvider::class,
+
     ],
 
     /*
