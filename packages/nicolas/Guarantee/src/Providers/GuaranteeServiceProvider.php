@@ -1,6 +1,6 @@
 <?php
 
-namespace nicolas\Payment\Providers;
+namespace nicolas\Guarantee\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Webkul\Admin\Providers\EventServiceProvider;
@@ -14,7 +14,7 @@ use Webkul\Core\Tree;
  * @author    Jitendra Singh <jitendra@webkul.com>
  * @copyright 2018 Webkul Software Pvt Ltd (http://www.webkul.com)
  */
-class PaymentServiceProvider extends ServiceProvider
+class GuaranteeServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -24,6 +24,7 @@ class PaymentServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__ . '/../Http/routes.php');
+        $this->loadMigrationsFrom(__DIR__ .'/../Database/Migrations');
 
 //        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'admin');
 //
@@ -31,7 +32,7 @@ class PaymentServiceProvider extends ServiceProvider
 //            __DIR__ . '/../../publishable/assets' => public_path('vendor/webkul/admin/assets'),
 //        ], 'public');
 //
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'payment');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'guarantee');
 //
 //        $this->composeView();
 //

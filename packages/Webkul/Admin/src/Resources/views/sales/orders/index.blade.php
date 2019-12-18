@@ -18,6 +18,9 @@
                         {{ __('admin::app.export.export') }}
                     </span>
                 </div>
+                <button onclick="" class="btn btn-lg btn-primary button">صدور کل سفارشات امروز</button>
+
+
             </div>
         </div>
 
