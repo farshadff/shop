@@ -446,7 +446,7 @@ class Core
     *
     * @param float $price
     *  @return string
-    */ 
+    */
     public function formatBasePrice($price)
     {
         if (is_null($price))
