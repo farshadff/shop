@@ -139,7 +139,6 @@ class OnepageController extends Controller
     public function saveShipping()
     {
         $shippingMethod = request()->get('shipping_method');
-
         if (Cart::hasError() || !$shippingMethod || !Cart::saveShippingMethod($shippingMethod))
             return response()->json(['redirect_url' => route('shop.checkout.cart.index')], 403);
 

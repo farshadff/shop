@@ -413,7 +413,7 @@ return [
         'onepage' => [
             'title' => 'وارسی',
             'information' => 'اطلاعات',
-            'shipping' => 'حمل دریایی',
+            'shipping' => 'شیوه ارسال',
             'payment' => 'پرداخت',
             'complete' => 'تکمیل',
             'billing-address' => 'آدرس قبض',

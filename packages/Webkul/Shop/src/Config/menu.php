@@ -37,6 +37,12 @@ return [
         'name' => 'shop::app.layouts.orders',
         'route' =>'customer.orders.index',
         'sort' => 5
+    ],
+    [
+        'key' => 'home',
+        'name' => 'Home',
+        'route' =>'',
+        'sort' => 6
     ]
 
 ];

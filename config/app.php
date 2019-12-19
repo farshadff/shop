@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'fa',
 
     /*
     |--------------------------------------------------------------------------
@@ -102,7 +102,7 @@ return [
     |
     */
 
-    'currency' => 'USD',
+    'currency' => 'IRL',
 
     /*
     |--------------------------------------------------------------------------
@@ -246,7 +246,7 @@ return [
         Webkul\API\Providers\APIServiceProvider::class,
         Webkul\Discount\Providers\DiscountServiceProvider::class,
         Webkul\CMS\Providers\CMSServiceProvider::class,
-        nicolas\Guarantee\Providers\GuaranteeServiceProvider::class,
+//        nicolas\Guarantee\Providers\GuaranteeServiceProvider::class,
 
     ],
 
