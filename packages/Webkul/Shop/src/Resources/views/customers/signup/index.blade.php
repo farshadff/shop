@@ -50,6 +50,11 @@
                 <input type="password" class="control" name="password_confirmation"  v-validate="'required|min:6|confirmed:password'" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.confirm_pass') }}&quot;">
                 <span class="control-error" v-if="errors.has('password_confirmation')">@{{ errors.first('password_confirmation') }}</span>
             </div>
+            <div class="control-group" :class="[errors.has('password_confirmation') ? 'has-error' : '']">
+                <label for="password_confirmation" class="required">شماره همراه</label>
+                <input type="text" class="control" name="mobile"  v-validate="'required|min:6|'" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.mobile') }}&quot;">
+                <span class="control-error" v-if="errors.has('mobile')">@{{ errors.first('mobile') }}</span>
+            </div>
 
             {{-- <div class="signup-confirm" :class="[errors.has('agreement') ? 'has-error' : '']">
                 <span class="checkbox">
@@ -73,7 +78,8 @@
                 <span class="control-error" v-if="errors.has('agreement')">@{{ errors.first('agreement') }}</span>
             </div> --}}
 
-            <button class="btn btn-primary btn-lg" type="submit">
+            <button     class="btn btn-primary btn-lg" type="submit">
+
                 {{ __('shop::app.customer.signup-form.button_title') }}
             </button>
 

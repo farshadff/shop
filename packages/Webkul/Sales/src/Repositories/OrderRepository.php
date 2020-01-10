@@ -317,4 +317,7 @@ class OrderRepository extends Repository
 
         return $order;
     }
+//    public function where($column,$variable) {
+//        $this->where($column,$variable);
+//    }
 }

@@ -162,6 +162,10 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         Route::post('register', 'Webkul\Customer\Http\Controllers\RegistrationController@create')->defaults('_config', [
             'redirect' => 'customer.session.index',
         ])->name('customer.register.create');
+        //Verify Sms Code
+        Route::get('verify-sms', 'Webkul\Customer\Http\Controllers\RegistrationController@verifySms')->defaults('_config', [
+            'view' => 'shop::customers.signup.verify-sms'
+        ])->name('customer.register.verify');
 
         //verify account
         Route::get('/verify-account/{token}', 'Webkul\Customer\Http\Controllers\RegistrationController@verifyAccount')->name('customer.verify');
