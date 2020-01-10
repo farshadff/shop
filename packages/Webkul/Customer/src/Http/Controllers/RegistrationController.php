@@ -12,7 +12,8 @@ use Illuminate\Routing\Controller;
 use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Customer\Repositories\CustomerGroupRepository;
 use Cookie;
-
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 /**
  * Registration controller
  *
@@ -57,6 +58,7 @@ class RegistrationController extends Controller
      */
     public function create(Request $request)
     {
+
         $request->validate([
             'first_name' => 'string|required',
             'last_name' => 'string|required',
@@ -65,7 +67,6 @@ class RegistrationController extends Controller
         ]);
 
         $data = request()->input();
-
         $data['password'] = bcrypt($data['password']);
 
         if (core()->getConfigData('customer.settings.email.verification')) {
@@ -81,11 +82,24 @@ class RegistrationController extends Controller
         $data['token'] = $verificationData['token'];
 
         Event::fire('customer.registration.before');
-
+        //this line must be moved to another function
         $customer = $this->customer->create($data);
 
         Event::fire('customer.registration.after', $customer);
-
+//        sending sms
+        $token = rand('11111','99999');
+        $client = new Client(); //GuzzleHttp\Client
+        $key = '59754D6D776E717246697941515254705357734B67323239526831624F584F384449546E6C457A4A6A41303D';
+        $result = $client->post('https://api.kavenegar.com/v1/'.$key.'/verify/lookup.json
+', [
+            'form_params' => [
+                'receptor' => '09192244689',
+                'token' => $token,
+                'template' => 'verify',
+            ]
+        ]);
+//        dd($result);
+        //here must be inserted in temp table
         if ($customer) {
             if (core()->getConfigData('customer.settings.email.verification')) {
                 try {
@@ -95,7 +109,8 @@ class RegistrationController extends Controller
                 } catch (\Exception $e) {
                     session()->flash('info', trans('shop::app.customer.signup-form.success-verify-email-unsent'));
                 }
-            } else {
+            }
+            else {
                  try {
                     Mail::queue(new RegistrationEmail(request()->all()));
 
@@ -108,7 +123,7 @@ class RegistrationController extends Controller
                 session()->flash('success', trans('shop::app.customer.signup-form.success'));
             }
 
-            return redirect()->route($this->_config['redirect']);
+            return redirect()->route('customer.register.verify');
         } else {
             session()->flash('error', trans('shop::app.customer.signup-form.failed'));
 
@@ -116,6 +131,9 @@ class RegistrationController extends Controller
         }
     }
 
+    public function verifySms(){
+        return view($this->_config['view']);
+    }
     /**
      * Method to verify account
      *

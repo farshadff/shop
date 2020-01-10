@@ -27,5 +27,15 @@ return [
         'active' => true,
         'business_account' => 'test@webkul.com',
         'sort' => 3
+    ],
+    'bank_saman' => [
+        'code' => 'bank_saman',
+        'title' => 'بانک سامان',
+        'description' => 'shop::app.checkout.onepage.saman-desc',
+        'class' => 'Webkul\Paypal\Payment\Standard',
+        'sandbox' => true,
+        'active' => true,
+        'business_account' => 'test@webkul.com',
+        'sort' => 3
     ]
 ];
