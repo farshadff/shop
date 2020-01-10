@@ -110,7 +110,7 @@ body {
     height: 0;
     top: 50%;
     left: 50%;
-    background: #fff;
+    background: #d11e26;
     opacity: 0;
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
     -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);

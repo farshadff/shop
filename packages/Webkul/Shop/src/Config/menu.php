@@ -38,12 +38,7 @@ return [
         'route' =>'customer.orders.index',
         'sort' => 5
     ],
-    [
-        'key' => 'home',
-        'name' => 'Home',
-        'route' =>'',
-        'sort' => 6
-    ]
+   
 
 ];
 
