@@ -397,8 +397,7 @@ class Core
         $formatter = new \NumberFormatter( app()->getLocale(), \NumberFormatter::CURRENCY );
 
         $formatter->setAttribute( $formatter::FRACTION_DIGITS, 0 );
-
-        return $formatter->formatCurrency($this->convertPrice($amount), $this->getCurrentCurrency()->code);
+        return $formatter->formatCurrency($this->convertPrice($amount), 'IRR');
     }
 
     /**

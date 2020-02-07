@@ -429,20 +429,18 @@ class Xlsx extends BaseReader
 
                     $sharedStrings = [];
                     $xpath = self::getArrayItem($relsWorkbook->xpath("rel:Relationship[@Type='http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings']"));
-                    if ($xpath) {
-                        //~ http://schemas.openxmlformats.org/spreadsheetml/2006/main"
-                        $xmlStrings = simplexml_load_string(
-                            $this->securityScanner->scan($this->getFromZipArchive($zip, "$dir/$xpath[Target]")),
-                            'SimpleXMLElement',
-                            Settings::getLibXmlLoaderOptions()
-                        );
-                        if (isset($xmlStrings, $xmlStrings->si)) {
-                            foreach ($xmlStrings->si as $val) {
-                                if (isset($val->t)) {
-                                    $sharedStrings[] = StringHelper::controlCharacterOOXML2PHP((string) $val->t);
-                                } elseif (isset($val->r)) {
-                                    $sharedStrings[] = $this->parseRichText($val);
-                                }
+                    //~ http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+                    $xmlStrings = simplexml_load_string(
+                        $this->securityScanner->scan($this->getFromZipArchive($zip, "$dir/$xpath[Target]")),
+                        'SimpleXMLElement',
+                        Settings::getLibXmlLoaderOptions()
+                    );
+                    if (isset($xmlStrings, $xmlStrings->si)) {
+                        foreach ($xmlStrings->si as $val) {
+                            if (isset($val->t)) {
+                                $sharedStrings[] = StringHelper::controlCharacterOOXML2PHP((string) $val->t);
+                            } elseif (isset($val->r)) {
+                                $sharedStrings[] = $this->parseRichText($val);
                             }
                         }
                     }
@@ -729,6 +727,15 @@ class Xlsx extends BaseReader
 
                                         // read empty cells or the cells are not empty
                                         if ($this->readEmptyCells || ($value !== null && $value !== '')) {
+                                            // Check for numeric values
+                                            if (is_numeric($value) && $cellDataType != 's') {
+                                                if ($value == (int) $value) {
+                                                    $value = (int) $value;
+                                                } elseif ($value == (float) $value) {
+                                                    $value = (float) $value;
+                                                }
+                                            }
+
                                             // Rich text?
                                             if ($value instanceof RichText && $this->readDataOnly) {
                                                 $value = $value->getPlainText();
@@ -1414,7 +1421,7 @@ class Xlsx extends BaseReader
                         }
                     }
 
-                    if ((!$this->readDataOnly || !empty($this->loadSheetsOnly)) && isset($xmlWorkbook->bookViews->workbookView)) {
+                    if ((!$this->readDataOnly) || (!empty($this->loadSheetsOnly))) {
                         $workbookView = $xmlWorkbook->bookViews->workbookView;
 
                         // active sheet index

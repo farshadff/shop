@@ -162,9 +162,15 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         Route::post('register', 'Webkul\Customer\Http\Controllers\RegistrationController@create')->defaults('_config', [
             'redirect' => 'customer.session.index',
         ])->name('customer.register.create');
+        //Enter Mobile Code
+        Route::get('get-mobile', 'Webkul\Customer\Http\Controllers\TempController@index')->defaults('_config', [
+            'view' => 'shop::customers.signup.get-mobile'
+        ])->name('customer.register.get-mobile');
+        Route::post('send-sms', 'Webkul\Customer\Http\Controllers\TempController@sendSms')->defaults('_config', [
+            'view' => 'shop::customers.signup.send-sms'
+        ])->name('customer.register.send-sms');
         //Verify Sms Code
-        Route::get('verify-sms', 'Webkul\Customer\Http\Controllers\RegistrationController@verifySms')->defaults('_config', [
-            'view' => 'shop::customers.signup.verify-sms'
+        Route::post('verify-sms', 'Webkul\Customer\Http\Controllers\TempController@verifySms')->defaults('_config', [
         ])->name('customer.register.verify');
 
         //verify account

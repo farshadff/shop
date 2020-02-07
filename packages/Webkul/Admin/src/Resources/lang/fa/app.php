@@ -42,7 +42,10 @@ return [
         'tax-categories' => 'دسته بندی مالیات',
         'tax-rates' => 'نرخ مالیات',
         'promotion' => 'تبلیغات',
-        'discount' => 'تخفیف'
+        'discount' => 'تخفیف',
+        'cms' => 'مدیریت محتوا',
+        'refunds' => 'استرداد'
+
     ],
 
     'acl' => [
@@ -140,6 +143,7 @@ return [
         'order-date' => 'تاریخ سفارش',
         'channel-name' => 'نام کانال',
         'billed-to' => 'صورت حساب داده شده برای',
+        'refund-date' => 'تاریخ استرداد',
         'shipped-to' => 'فرستاده شده به',
         'order-id' => 'سفارش Id',
         'invoice-date' => 'تاریخ فاکتور',
@@ -169,7 +173,7 @@ return [
         'disc_quantity' => 'مقدار استفاده نشده',
         'disc_threshold' => 'آستانه استفاده نشده',
         'use_coupon' => 'استافده از کوپن',
-        'refunded' => 'Refunded'
+        'refunded' => 'وضعییت استرداد'
     ],
 
     'account' => [
@@ -992,7 +996,7 @@ return [
             'one-col' => '<div class="mt-10">Use class: <b>"static-container one-column"</b> for one column layout.</div>',
             'two-col' => '<div class="mt-10">Use class: <b>"static-container two-column"</b> for two column layout.</div>',
             'three-col' => '<div class="mt-10">Use class: <b>"static-container three-column"</b> for three column layout.</div>',
-            'helper-classes' => 'Helper Classes'
+            'helper-classes' => 'Helper Classes',
         ]
     ],
     'response' => [
@@ -1062,6 +1066,8 @@ return [
             'sort_order' => 'ترتیب مرتب سازی',
             'general' => 'عمومی',
             'footer' => 'فوتر',
+            'footer-toggle' => 'تغییر زبان',
+
             'content' => 'محتوا',
             'footer-content' => 'متن فوتر',
             'locale-options' => 'گزینه های واحد',

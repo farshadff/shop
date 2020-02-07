@@ -79,9 +79,7 @@ class SliderController extends Controller
             'channel_id' => 'required',
             'image.*'  => 'required|mimes:jpeg,bmp,png,jpg'
         ]);
-
         $result = $this->slider->save(request()->all());
-
         if ($result)
             session()->flash('success', trans('admin::app.settings.sliders.created-success'));
         else

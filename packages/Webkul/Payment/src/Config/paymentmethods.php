@@ -1,12 +1,22 @@
 <?php
 return [
+    'bank_pasargad' => [
+        'code' => 'bank_pasargad',
+        'title' => 'بانک پاسارگاد',
+        'description' => 'استاندارد',
+        'class' => 'Webkul\Pasargad\Payment\Pasargad',
+        'sandbox' => true,
+        'active' => true,
+        'business_account' => 'test@webkul.com',
+        'sort' => 1
+    ],
     'cashondelivery' => [
         'code' => 'cashondelivery',
         'title' => 'Cash On Delivery',
         'description' => 'shop::app.checkout.onepage.cash-desc',
         'class' => 'Webkul\Payment\Payment\CashOnDelivery',
         'active' => true,
-        'sort' => 1
+        'sort' => 2
     ],
 
     'moneytransfer' => [
@@ -15,7 +25,7 @@ return [
         'description' => 'shop::app.checkout.onepage.money-desc',
         'class' => 'Webkul\Payment\Payment\MoneyTransfer',
         'active' => true,
-        'sort' => 2
+        'sort' => 3
     ],
 
     'paypal_standard' => [
@@ -26,16 +36,7 @@ return [
         'sandbox' => true,
         'active' => true,
         'business_account' => 'test@webkul.com',
-        'sort' => 3
+        'sort' => 4
     ],
-    'bank_saman' => [
-        'code' => 'bank_saman',
-        'title' => 'بانک سامان',
-        'description' => 'shop::app.checkout.onepage.saman-desc',
-        'class' => 'Webkul\Paypal\Payment\Standard',
-        'sandbox' => true,
-        'active' => true,
-        'business_account' => 'test@webkul.com',
-        'sort' => 3
-    ]
+
 ];

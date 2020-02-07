@@ -3,64 +3,120 @@
         <span class="checkout-step-heading">{{ __('shop::app.checkout.onepage.summary') }}</span>
     </div>
 
-    <div class="address-summary">
+        <div class="row">
+            <div class="col-lg-12">
         @if ($billingAddress = $cart->billing_address)
-            <div class="billing-address">
-                <div class="card-title mb-20">
-                    <b>{{ __('shop::app.checkout.onepage.billing-address') }}</b>
-                </div>
+                    <div class="container my-5 py-5 z-depth-1">
 
-                <div class="card-content">
-                    <ul>
-                        <li class="mb-10">
-                            {{ $billingAddress->name }}
-                        </li>
-                        <li class="mb-10">
-                            {{ $billingAddress->address1 }},<br/> {{ $billingAddress->state }}
-                        </li>
-                        <li class="mb-10">
-                            {{ core()->country_name($billingAddress->country) }} {{ $billingAddress->postcode }}
-                        </li>
 
-                        <span class="horizontal-rule mb-15 mt-15"></span>
+                        <!--Section: Content-->
+                        <section class="text-center px-md-5 mx-md-5 dark-grey-text">
 
-                        <li class="mb-10">
-                            {{ __('shop::app.checkout.onepage.contact') }} : {{ $billingAddress->phone }}
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                            <!--Grid row-->
+                            <div class="row">
+
+                                <!--Grid column-->
+                                <div class="col-lg-6 mb-lg-0 mb-md-4">
+
+                                    <!--Image-->
+                                    <div class="view overlay z-depth-1-half">
+                                        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(5).jpg" class="img-fluid"
+                                             alt="">
+                                        <a href="#">
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-lg-6 ">
+
+                                    <h3 class="font-weight-bold">{{ __('shop::app.checkout.onepage.billing-address') }}</h3>
+                                    <h4 class="font-weight-bold">                            {{ $billingAddress->name }}
+                                    </h4>
+
+                                    <p class="text-muted">  {{ $billingAddress->postcode }}
+                                        {{ $billingAddress->address1 }} {{ $billingAddress->state }} {{ core()->country_name($billingAddress->country) }}
+                                        {{ __('shop::app.checkout.onepage.contact') }} : {{ $billingAddress->phone }}
+
+                                    </p>
+
+                                    <a class="btn btn-info btn-md waves-effect" href="#" role="button">Download<i
+                                            class="fa fa-download ml-1"></i></a>
+
+                                </div>
+                                <!--Grid column-->
+
+                            </div>
+                            <!--Grid row-->
+
+                        </section>
+                        <!--Section: Content-->
+
+
+                    </div>
         @endif
-
+            </div>
+            <div class="col-lg-12">
         @if ($shippingAddress = $cart->shipping_address)
-            <div class="shipping-address">
-                <div class="card-title mb-20">
-                    <b>{{ __('shop::app.checkout.onepage.shipping-address') }}</b>
-                </div>
+                    <div class="container my-5 py-5 z-depth-1">
 
-                <div class="card-content">
-                    <ul>
-                        <li class="mb-10">
-                            {{ $shippingAddress->name }}
-                        </li>
-                        <li class="mb-10">
-                            {{ $shippingAddress->address1 }},<br/> {{ $shippingAddress->state }}
-                        </li>
-                        <li class="mb-10">
-                            {{ core()->country_name($shippingAddress->country) }} {{ $shippingAddress->postcode }}
-                        </li>
 
-                        <span class="horizontal-rule mb-15 mt-15"></span>
+                        <!--Section: Content-->
+                        <section class="text-center px-md-5 mx-md-5 dark-grey-text">
 
-                        <li class="mb-10">
-                            {{ __('shop::app.checkout.onepage.contact') }} : {{ $shippingAddress->phone }}
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                            <!--Grid row-->
+                            <div class="row">
+
+                                <!--Grid column-->
+                                <div class="col-lg-6 mb-lg-0 mb-md-4">
+
+                                    <!--Image-->
+                                    <div class="view overlay z-depth-1-half">
+                                        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(5).jpg" class="img-fluid"
+                                             alt="">
+                                        <a href="#">
+                                            <div class="mask rgba-white-slight"></div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-lg-6 ">
+
+                                    <h3 class="font-weight-bold">{{ __('shop::app.checkout.onepage.shipping-address') }}</h3>
+                                    <h4 class="font-weight-bold">                           {{ $shippingAddress->name }}
+                                    </h4>
+
+                                    <p class="text-muted">   {{ $shippingAddress->address1 }} {{ $shippingAddress->state }} {{ core()->country_name($shippingAddress->country) }} {{ $shippingAddress->postcode }}
+                                        <br>
+                                        {{ __('shop::app.checkout.onepage.contact') }} : {{ $shippingAddress->phone }}
+
+
+                                    </p>
+
+                                    <button type="button" class="btn btn-deep-purple btn-rounded">اصلاح آدرس</button>
+
+
+                                </div>
+                                <!--Grid column-->
+
+                            </div>
+                            <!--Grid row-->
+
+                        </section>
+                        <!--Section: Content-->
+
+
+                    </div>
         @endif
+            </div>
+        </div>
 
-    </div>
 
     @inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
 

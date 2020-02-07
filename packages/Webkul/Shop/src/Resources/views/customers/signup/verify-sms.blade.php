@@ -9,9 +9,10 @@
 
     {!! view_render_event('bagisto.shop.customers.signup.before') !!}
 
-    <form method="post" action="{{ route('customer.register.create') }}" @submit.prevent="onSubmit">
+    <form method="post" action="{{ route('customer.register.verify') }}" @submit.prevent="onSubmit">
 
         {{ csrf_field() }}
+        <input type="hidden" name="mobile" value="{{$cellphone}}">
 
         <div class="login-form">
             <div class="login-text">{{ __('shop::app.customer.signup-form.title') }}</div>
@@ -20,7 +21,7 @@
 
             <div class="control-group" :class="[errors.has('first_name') ? 'has-error' : '']">
                 <label for="first_name" class="required">{{ __('shop::app.customer.signup-form.verify-sms-title') }}</label>
-                <input type="text" class="control" name="first_name" v-validate="'required'" value="{{ old('first_name') }}" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.firstname') }}&quot;">
+                <input type="text" class="control" name="code">
                 <span class="control-error" v-if="errors.has('first_name')">@{{ errors.first('first_name') }}</span>
             </div>
 
@@ -35,7 +36,7 @@
                 <span class="control-error" v-if="errors.has('agreement')">@{{ errors.first('agreement') }}</span>
             </div> --}}
 
-            <button     class="btn btn-primary btn-lg" type="submit">
+            <button     class="btn btn-primary btn-lg m-auto" type="submit">
 
                 {{ __('shop::app.customer.signup-form.submit') }}
             </button>

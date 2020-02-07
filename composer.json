@@ -17,6 +17,7 @@
         "ext-pdo_mysql": "*",
         "ext-tokenizer": "*",
         "astrotomic/laravel-translatable": "^11.0.0",
+        "barryvdh/laravel-debugbar": "^3.2@dev",
         "barryvdh/laravel-dompdf": "0.8.3",
         "doctrine/dbal": "2.9.2",
         "fideloper/proxy": "^4.0",
@@ -36,7 +37,6 @@
         "tymon/jwt-auth": "1.0.0-rc.4"
     },
     "require-dev": {
-      "barryvdh/laravel-debugbar": "^3.1",
       "filp/whoops": "^2.0",
       "fzaninotto/faker": "^1.4",
       "laravel/dusk": "^4.0",
@@ -87,6 +87,7 @@
         "Webkul\\Shipping\\": "packages/Webkul/Shipping/src",
         "Webkul\\Payment\\": "packages/Webkul/Payment/src",
         "Webkul\\Paypal\\": "packages/Webkul/Paypal/src",
+        "Webkul\\Pasargad\\": "packages/Webkul/Pasargad/src",
         "Webkul\\Sales\\": "packages/Webkul/Sales/src",
         "Webkul\\Tax\\": "packages/Webkul/Tax/src",
         "Webkul\\API\\": "packages/Webkul/API",
