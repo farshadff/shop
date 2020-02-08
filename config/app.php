@@ -224,6 +224,8 @@ return [
         Konekt\Concord\ConcordServiceProvider::class,
         Flynsarmy\DbBladeCompiler\DbBladeCompilerServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Larabookir\Gateway\GatewayServiceProvider::class, // <-- add this line at the end of provider array
+
 
         //Webkul packages
         Webkul\Theme\Providers\ThemeServiceProvider::class,
@@ -246,8 +248,7 @@ return [
         Webkul\API\Providers\APIServiceProvider::class,
         Webkul\Discount\Providers\DiscountServiceProvider::class,
         Webkul\CMS\Providers\CMSServiceProvider::class,
-//        nicolas\Guarantee\Providers\GuaranteeServiceProvider::class,
-
+        Webkul\Pasargad\Providers\PasargadServiceProvider::class,
     ],
 
     /*
@@ -305,6 +306,7 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Concord' => Konekt\Concord\Facades\Concord::class,
-        'Helper'  => Konekt\Concord\Facades\Helper::class
+        'Helper'  => Konekt\Concord\Facades\Helper::class,
+        'Gateway' => Larabookir\Gateway\Gateway::class, // <-- add this line at the end of aliases array
     ],
 ];

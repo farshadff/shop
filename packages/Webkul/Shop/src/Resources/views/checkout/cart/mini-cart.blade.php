@@ -78,7 +78,7 @@
 
                                 {!! view_render_event('bagisto.shop.checkout.cart-mini.item.quantity.before', ['item' => $item]) !!}
 
-                                <div class="item-qty">Quantity - {{ $item->quantity }}</div>
+                                <div class="item-qty">تعداد - {{ $item->quantity }}</div>
 
                                 {!! view_render_event('bagisto.shop.checkout.cart-mini.item.quantity.after', ['item' => $item]) !!}
                             </div>
@@ -100,7 +100,7 @@
 
     <div class="dropdown-toggle">
         <div style="display: inline-block; cursor: pointer;">
-            <span class="icon cart-icon"></span>
+            <i class="fas fa-shopping-basket basket-icon"></i>
             <span class="name">{{ __('shop::app.minicart.cart') }}<span class="count"> ({{ __('shop::app.minicart.zero') }}) </span></span>
         </div>
     </div>

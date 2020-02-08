@@ -16,6 +16,7 @@
 
             <span class="special-price">{{ core()->currency($priceHelper->getSpecialPrice($product)) }}</span>
         @else
+{{--            @php(dd(core()->currency(2255)))--}}
             <span>{{ core()->currency($product->price) }}</span>
         @endif
     @endif

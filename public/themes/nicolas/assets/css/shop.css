@@ -940,7 +940,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header {
-    margin-top: 16px;
+    /*margin-top: 16px;*/
     /*margin-bottom: 21px;*/
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -949,7 +949,8 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-top {
-    margin-bottom: 16px;
+    background-color: #c42d2d;
+    /*margin-bottom: 16px;*/
     max-width: 100%;
     width: auto;
     margin-left: auto;
@@ -960,6 +961,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-top, .header .header-top div.left-content {
+    min-height: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1110,7 +1112,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-top div.right-content .right-content-menu .guest {
-    width: 300px
+    width: 350px
 }
 
 .header .header-top div.right-content .right-content-menu .guest .btn.btn-sm {
@@ -1233,7 +1235,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-bottom {
-    height: 47px;
+    height: 54px;
     margin-left: auto;
     margin-right: auto;
     border-top: 1px solid #c7c7c7;
@@ -2456,9 +2458,11 @@ section.cart .cart-content .right-side {
 .cart-item-list .item .item-details .misc .control-group .control {
     height: 38px;
     width: 60px;
-    border-radius: 3px;
+    /*border-radius: 3px;*/
     text-align: center;
-    line-height: 38px
+    line-height: 38px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
 }
 
 .cart-item-list .item .item-details .misc .remove, .cart-item-list .item .item-details .misc .towishlist {
@@ -3821,7 +3825,7 @@ section.review .review-layouter .ratings-reviews .right-side .rater .line-bar .l
 }
 
 .rtl .header .header-bottom .nav a {
-    padding: .8em .5em .8em .3em !important
+    padding: 1.3em .5em .8em .3em !important
 }
 
 .rtl .header .header-bottom .nav li a > .icon {

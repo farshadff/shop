@@ -10,10 +10,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="content-language" content="{{ app()->getLocale() }}">
+        <link rel="stylesheet" href="{{ bagisto_asset('css/bootstrap.min.css') }}">
 
     <link rel="stylesheet" href="{{ bagisto_asset('css/shop.css') }}">
     <link rel="stylesheet" href="{{ bagisto_asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ bagisto_asset('css/costum.css') }}">
+{{--    Adding MDB Pro--}}
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="{{ bagisto_asset('css/mdb.min.css') }}">
+{{--    <!-- Font Awesome -->--}}
+{{--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">--}}
+{{--    <!-- Bootstrap core CSS -->--}}
+{{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">--}}
+{{--    <!-- Material Design Bootstrap -->--}}
+{{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/css/mdb.min.css" rel="stylesheet">--}}
+{{--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"--}}
+{{--          rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
 
     @if ($favicon = core()->getCurrentChannel()->favicon_url)
@@ -107,6 +122,18 @@
             @endif
         @endif
     </script>
+{{--MDBPRO--}}
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ bagisto_asset('js/jquery.min.js') }}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{ bagisto_asset('js/popper.min.js') }}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ bagisto_asset('js/bootstrap.min.js') }}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ bagisto_asset('js/mdb.min.js') }}"></script>
+
+
 
     <script type="text/javascript" src="{{ bagisto_asset('js/shop.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>

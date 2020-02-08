@@ -186,9 +186,9 @@ return [
         ]
     ],
     [
-        'key' => 'sales.paymentmethods.bank_saman',
-        'name' => 'بانک سامان',
-        'sort' => 3,
+        'key' => 'sales.paymentmethods.bank_pasargad',
+        'name' => 'بانک پاسارگاد',
+        'sort' => 1,
         'fields' => [
             [
                 'name' => 'title',

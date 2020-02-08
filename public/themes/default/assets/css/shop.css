@@ -828,7 +828,7 @@ section.slider-block {
 
 section.slider-block div.slider-content {
     position: relative;
-    height: 500px;
+    height: 500px !important;
     margin-left: auto;
     margin-right: auto
 }
@@ -940,7 +940,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header {
-    margin-top: 16px;
+    /*margin-top: 16px;*/
     margin-bottom: 21px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -949,6 +949,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-top {
+    background-color: #c42d2d;
     margin-bottom: 16px;
     max-width: 100%;
     width: auto;
@@ -1110,7 +1111,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-top div.right-content .right-content-menu .guest {
-    width: 300px
+    width: 350px
 }
 
 .header .header-top div.right-content .right-content-menu .guest .btn.btn-sm {

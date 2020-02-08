@@ -2,8 +2,11 @@
 
 namespace Webkul\Admin\Http\Controllers\Sales;
 
+use Barryvdh\DomPDF\Facade as PDF;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\App;
 use Webkul\Admin\Http\Controllers\Controller;
 use Webkul\Sales\Repositories\OrderRepository as Order;
 
@@ -85,5 +88,20 @@ class OrderController extends Controller
         }
 
         return redirect()->back();
+    }
+//    this return must later on print the orders for operator
+    public function todayOrders(){
+        $orders = \Webkul\Sales\Models\Order::with('addresses')->where('created_at','>=',Carbon::today()->format('Y-m-d h:m:s'))->get();
+//        $route = view($this->_config['view']);
+//        $pdf = App::make('dompdf.wrapper');
+//        return $route;
+//        $pdf->loadHTML($route);
+//        return $pdf->stream();
+//        $pdf = PDF::loadView($this->_config['view']);
+//        return $pdf->download('invoice.pdf');
+//        dd($orders);
+        return view($this->_config['view'], compact('orders'));
+
+//        return $order;
     }
 }

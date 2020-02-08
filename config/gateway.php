@@ -78,8 +78,8 @@ return [
     // Pasargad gateway
     //--------------------------------
     'pasargad' => [
-        'terminalId'    => 000000,
-        'merchantId'    => 000000,
+        'terminalId'    => 1534526,
+        'merchantId'    => 4361875,
         'certificate-path'    => storage_path('gateway/pasargad/certificate.xml'),
         'callback-url' => '/gateway/callback/pasargad'
     ],

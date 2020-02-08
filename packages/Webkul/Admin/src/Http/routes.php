@@ -148,6 +148,9 @@ Route::group(['middleware' => ['web']], function () {
                 Route::get('/orders', 'Webkul\Admin\Http\Controllers\Sales\OrderController@index')->defaults('_config', [
                     'view' => 'admin::sales.orders.index'
                 ])->name('admin.sales.orders.index');
+                Route::get('/todayOrders', 'Webkul\Admin\Http\Controllers\Sales\OrderController@todayOrders')->defaults('_config', [
+                    'view' => 'admin::sales.orders.todayOrders'
+                ])->name('admin.sales.orders.todayOrders');
 
                 Route::get('/orders/view/{id}', 'Webkul\Admin\Http\Controllers\Sales\OrderController@view')->defaults('_config', [
                     'view' => 'admin::sales.orders.view'
