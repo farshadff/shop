@@ -42,7 +42,7 @@ return [
 
     'minicart' => [
         'view-cart' => 'مشاهده سبد خرید',
-        'checkout' => 'وارسی',
+        'checkout' => 'پرداخت',
         'cart' => 'سبد خرید',
         'zero' => '0'
     ],

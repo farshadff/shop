@@ -22,6 +22,8 @@
 
             {!! view_render_event('bagisto.shop.customers.signup_form_controls.before') !!}
 
+            
+
             <div class="control-group" :class="[errors.has('first_name') ? 'has-error' : '']">
                 <label for="first_name" class="required">{{ __('shop::app.customer.signup-form.firstname') }}</label>
                 <input type="text" class="form-control" name="first_name" v-validate="'required'" value="{{ old('first_name') }}" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.firstname') }}&quot;">

@@ -1,6 +1,6 @@
 <form data-vv-scope="payment-form">
     <div class="form-container">
-        <div class="form-header mb-30">
+        <div class="form-header p-5 mb-30">
             <span class="checkout-step-heading">{{ __('shop::app.checkout.onepage.payment-methods') }}</span>
         </div>
 

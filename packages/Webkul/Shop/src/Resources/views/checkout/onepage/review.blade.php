@@ -1,12 +1,12 @@
 <div class="form-container">
-    <div class="form-header mb-30">
+    <div class="form-header p-4 mb-30">
         <span class="checkout-step-heading">{{ __('shop::app.checkout.onepage.summary') }}</span>
     </div>
 
         <div class="row">
             <div class="col-lg-12">
         @if ($billingAddress = $cart->billing_address)
-                    <div class="container my-5 py-5 z-depth-1">
+                    <div class="container py-5 z-depth-1">
 
 
                         <!--Section: Content-->
@@ -43,8 +43,7 @@
 
                                     </p>
 
-                                    <a class="btn btn-info btn-md waves-effect" href="#" role="button">Download<i
-                                            class="fa fa-download ml-1"></i></a>
+                                    <a class="btn btn-deep-purple btn-rounded waves-effect" href="#" role="button">اصلاح
 
                                 </div>
                                 <!--Grid column-->
@@ -61,7 +60,7 @@
             </div>
             <div class="col-lg-12">
         @if ($shippingAddress = $cart->shipping_address)
-                    <div class="container my-5 py-5 z-depth-1">
+                    <div class="container py-5 z-depth-1">
 
 
                         <!--Section: Content-->
