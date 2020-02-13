@@ -5,6 +5,11 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
     Route::get('/', 'Webkul\Shop\Http\Controllers\HomeController@index')->defaults('_config', [
         'view' => 'shop::home.index'
     ])->name('shop.home.index');
+    //Contact Us
+    Route::get('/contact-us', 'Webkul\Shop\Http\Controllers\HomeController@contact')->defaults('_config', [
+        'view' => 'shop::cms.contact'
+    ])->name('shop.contact');
+    Route::post('/contact-store', 'Webkul\Shop\Http\Controllers\ContactUsController@store')->name('shop.contact.store');
 
     //subscription
     //subscribe

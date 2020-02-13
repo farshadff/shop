@@ -42,4 +42,7 @@ use Webkul\Core\Repositories\SliderRepository;
     {
         abort(404);
     }
+    public function contact(){
+        return view($this->_config['view']);
+    }
 }

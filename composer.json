@@ -16,6 +16,7 @@
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
         "ext-tokenizer": "*",
+        "anetwork/validation": "dev-master",
         "astrotomic/laravel-translatable": "^11.0.0",
         "barryvdh/laravel-debugbar": "^3.2@dev",
         "barryvdh/laravel-dompdf": "0.8.3",

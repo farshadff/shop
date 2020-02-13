@@ -239,7 +239,9 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
                         </div>
                     </div>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{url('/contact-us')}}">تماس با ما</a>
+                </li>
 
             </ul>
             <!-- Links -->
