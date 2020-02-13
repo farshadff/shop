@@ -43,7 +43,9 @@
 
                                     </p>
 
-                                    <a class="btn btn-deep-purple btn-rounded waves-effect" href="#" role="button">اصلاح
+{{--                                    <a class="btn btn-deep-purple btn-rounded waves-effect" href="#" role="button">اصلاح--}}
+{{--                                    </a>--}}
+                                    <button type="button" class="btn btn-deep-purple btn-rounded waves-effect">اصلاح </button>
 
                                 </div>
                                 <!--Grid column-->
