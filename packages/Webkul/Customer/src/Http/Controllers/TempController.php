@@ -39,7 +39,7 @@ class TempController extends Controller
             'cellphone' => $request->mobile,
             'code' => $token,
         ]);
-        return view('shop::customers.signup.verify-sms', compact('cellphone', $cellphone));
+        return view('shop::customers.signup.verify-sms', compact('cellphone'));
         //here must be inserted in temp table
     }
 
