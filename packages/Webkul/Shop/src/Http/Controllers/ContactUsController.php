@@ -20,4 +20,10 @@ class ContactUsController extends Controller
             ]);
             return redirect()->back();
         }
+        public function about(){
+            return view('shop::cms.about');
+        }
+        public function branches(){
+            return view('shop::cms.branches');
+        }
 }

@@ -5,7 +5,8 @@
 @stop
 
 @section('seo')
-    <meta name="description" content="{{ trim($product->meta_description) != "" ? $product->meta_description : str_limit(strip_tags($product->description), 120, '') }}"/>
+    <meta name="description"
+          content="{{ trim($product->meta_description) != "" ? $product->meta_description : str_limit(strip_tags($product->description), 120, '') }}"/>
     <meta name="keywords" content="{{ $product->meta_keywords }}"/>
 @stop
 
@@ -51,13 +52,21 @@
 
                             <label class="required">{{ __('shop::app.products.quantity') }}</label>
 
-                            <input class="control quantity-change" value="-" style="width: 35px; border-radius: 3px 0px 0px 3px;" onclick="updateQunatity('remove')" readonly>
+                            <input class="control quantity-change" value="-"
+                                   style="width: 35px; border-radius: 3px 0px 0px 3px;"
+                                   onclick="updateQunatity('remove')" readonly>
 
-                            <input name="quantity" id="quantity" class="control quantity-change" value="1" v-validate="'required|numeric|min_value:1'" style="width: 60px; position: relative; margin-left: -4px; margin-right: -4px; border-right: none;border-left: none; border-radius: 0px;" data-vv-as="&quot;{{ __('shop::app.products.quantity') }}&quot;" readonly>
+                            <input name="quantity" id="quantity" class="control quantity-change" value="1"
+                                   v-validate="'required|numeric|min_value:1'"
+                                   style="width: 60px; position: relative; margin-left: -4px; margin-right: -4px; border-right: none;border-left: none; border-radius: 0px;"
+                                   data-vv-as="&quot;{{ __('shop::app.products.quantity') }}&quot;" readonly>
 
-                            <input class="control quantity-change" value="+" style="width: 35px; padding: 0 12px; border-radius: 0px 3px 3px 0px;" onclick=updateQunatity('add') readonly>
+                            <input class="control quantity-change" value="+"
+                                   style="width: 35px; padding: 0 12px; border-radius: 0px 3px 3px 0px;"
+                                   onclick=updateQunatity('add') readonly>
 
-                            <span class="control-error" v-if="errors.has('quantity')">@{{ errors.first('quantity') }}</span>
+                            <span class="control-error"
+                                  v-if="errors.has('quantity')">@{{ errors.first('quantity') }}</span>
                         </div>
 
                         {!! view_render_event('bagisto.shop.products.view.quantity.after', ['product' => $product]) !!}
@@ -101,13 +110,94 @@
 
     </section>
 
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                9
+            </div>
+            <div class="col-lg-4 aside-product">
+                <div class="product-title mb-20">
+                    <h1 class="mt-25">product title</h1>
+                    <span class="text-muted">model number</span>
+                </div>
+                <div class="size-area mt-25">
+                    <ul class="nav nav-tabs size-tab" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                               aria-controls="home"
+                               aria-selected="true">EU</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                               aria-controls="profile"
+                               aria-selected="false">US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                               aria-controls="contact"
+                               aria-selected="false">UK</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                            <span class="size-icon text-muted">32</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-info pt-3">
+                    <p class="text-center">lore
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {!! view_render_event('bagisto.shop.products.view.after', ['product' => $product]) !!}
 @endsection
 
 @push('scripts')
 
     <script type="text/x-template" id="product-view-template">
-        <form method="POST" id="product-form" action="{{ route('cart.add', $product->product_id) }}" @click="onSubmit($event)">
+        <form method="POST" id="product-form" action="{{ route('cart.add', $product->product_id) }}"
+              @click="onSubmit($event)">
 
             <slot></slot>
 
@@ -123,7 +213,7 @@
             inject: ['$validator'],
 
             methods: {
-                onSubmit: function(e) {
+                onSubmit: function (e) {
                     if (e.target.getAttribute('type') != 'submit')
                         return;
 
@@ -131,53 +221,53 @@
 
                     this.$validator.validateAll().then(function (result) {
                         if (result) {
-                          if (e.target.getAttribute('data-href')) {
-                            window.location.href = e.target.getAttribute('data-href');
-                          } else {
-                            document.getElementById('product-form').submit();
-                          }
+                            if (e.target.getAttribute('data-href')) {
+                                window.location.href = e.target.getAttribute('data-href');
+                            } else {
+                                document.getElementById('product-form').submit();
+                            }
                         }
                     });
                 }
             }
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             var addTOButton = document.getElementsByClassName('add-to-buttons')[0];
-            document.getElementById('loader').style.display="none";
-            addTOButton.style.display="flex";
+            document.getElementById('loader').style.display = "none";
+            addTOButton.style.display = "flex";
         });
 
-        window.onload = function() {
+        window.onload = function () {
             var thumbList = document.getElementsByClassName('thumb-list')[0];
             var thumbFrame = document.getElementsByClassName('thumb-frame');
             var productHeroImage = document.getElementsByClassName('product-hero-image')[0];
 
             if (thumbList && productHeroImage) {
 
-                for(let i=0; i < thumbFrame.length ; i++) {
-                    thumbFrame[i].style.height = (productHeroImage.offsetHeight/4) + "px";
-                    thumbFrame[i].style.width = (productHeroImage.offsetHeight/4)+ "px";
+                for (let i = 0; i < thumbFrame.length; i++) {
+                    thumbFrame[i].style.height = (productHeroImage.offsetHeight / 4) + "px";
+                    thumbFrame[i].style.width = (productHeroImage.offsetHeight / 4) + "px";
                 }
 
                 if (screen.width > 720) {
-                    thumbList.style.width = (productHeroImage.offsetHeight/4) + "px";
-                    thumbList.style.minWidth = (productHeroImage.offsetHeight/4) + "px";
+                    thumbList.style.width = (productHeroImage.offsetHeight / 4) + "px";
+                    thumbList.style.minWidth = (productHeroImage.offsetHeight / 4) + "px";
                     thumbList.style.height = productHeroImage.offsetHeight + "px";
                 }
             }
 
-            window.onresize = function() {
+            window.onresize = function () {
                 if (thumbList && productHeroImage) {
 
-                    for(let i=0; i < thumbFrame.length; i++) {
-                        thumbFrame[i].style.height = (productHeroImage.offsetHeight/4) + "px";
-                        thumbFrame[i].style.width = (productHeroImage.offsetHeight/4)+ "px";
+                    for (let i = 0; i < thumbFrame.length; i++) {
+                        thumbFrame[i].style.height = (productHeroImage.offsetHeight / 4) + "px";
+                        thumbFrame[i].style.width = (productHeroImage.offsetHeight / 4) + "px";
                     }
 
                     if (screen.width > 720) {
-                        thumbList.style.width = (productHeroImage.offsetHeight/4) + "px";
-                        thumbList.style.minWidth = (productHeroImage.offsetHeight/4) + "px";
+                        thumbList.style.width = (productHeroImage.offsetHeight / 4) + "px";
+                        thumbList.style.minWidth = (productHeroImage.offsetHeight / 4) + "px";
                         thumbList.style.height = productHeroImage.offsetHeight + "px";
                     }
                 }

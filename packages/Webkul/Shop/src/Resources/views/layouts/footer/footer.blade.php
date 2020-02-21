@@ -90,5 +90,11 @@
 
             </div>
         </div>
+
     </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">تمامی حقوق مادی و معنوی این سایت متعلق به
+        <a href="{{url('/')}}"> شرکت چرم نیکلاس است</a>
+    </div>
+    <!-- Copyright -->
 </div>

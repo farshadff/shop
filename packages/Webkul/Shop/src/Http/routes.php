@@ -10,7 +10,14 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         'view' => 'shop::cms.contact'
     ])->name('shop.contact');
     Route::post('/contact-store', 'Webkul\Shop\Http\Controllers\ContactUsController@store')->name('shop.contact.store');
-
+    //about us
+    Route::get('about-us', 'Webkul\Shop\Http\Controllers\ContactUsController@about')->defaults('_config', [
+        'view' => 'shop::cms.about'
+    ])->name('shop.about');
+    //branches
+    Route::get('branches', 'Webkul\Shop\Http\Controllers\ContactUsController@branches')->defaults('_config', [
+        'view' => 'shop::cms.branches'
+    ])->name('shop.about');
     //subscription
     //subscribe
     Route::get('/subscribe', 'Webkul\Shop\Http\Controllers\SubscriptionController@subscribe')->name('shop.subscribe');
@@ -44,9 +51,9 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         'view' => 'shop::checkout.cart.index'
     ])->name('shop.checkout.cart.index');
 
-        Route::post('checkout/check/coupons', 'Webkul\Shop\Http\Controllers\OnepageController@applyCoupon')->name('shop.checkout.check.coupons');
+    Route::post('checkout/check/coupons', 'Webkul\Shop\Http\Controllers\OnepageController@applyCoupon')->name('shop.checkout.check.coupons');
 
-        Route::post('checkout/remove/coupon', 'Webkul\Shop\Http\Controllers\OnepageController@removeCoupon')->name('shop.checkout.remove.coupon');
+    Route::post('checkout/remove/coupon', 'Webkul\Shop\Http\Controllers\OnepageController@removeCoupon')->name('shop.checkout.remove.coupon');
 
     //Cart Items Add
     Route::post('checkout/cart/add/{id}', 'Webkul\Shop\Http\Controllers\CartController@add')->defaults('_config', [
@@ -120,7 +127,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         'redirect' => 'shop.home.index'
     ])->name('shop.reviews.store');
 
-     // Download file or image
+    // Download file or image
     Route::get('/product/{id}/{attribute_id}', 'Webkul\Shop\Http\Controllers\ProductController@download')->defaults('_config', [
         'view' => 'shop.products.index'
     ])->name('shop.product.file.download');
