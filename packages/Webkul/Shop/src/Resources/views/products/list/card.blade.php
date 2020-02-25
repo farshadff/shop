@@ -10,69 +10,64 @@
             {{ __('shop::app.products.new') }}
         </div>
     @endif
-{{--    <div class="col-lg-3 col-md-6 mb-4 card-product">--}}
-        <!-- Card -->
-        <div class="card card-cascade narrower card-ecommerce">
-            <!-- Card image -->
-            <div class="view view-cascade overlay">
-                {{--                <img src="{{ $productBaseImage['medium_image_url'] }}" class="card-img-top"--}}
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/1.jpg" class="card-img-top"
-                     alt="sample photo">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            <!-- Card image -->
-            <!-- Card content -->
-            <div class="card-body card-body-cascade text-center pb-3">
-                <!-- Title -->
-                <h5 class="card-title mb-1">
-                    <strong>
-                        <a href="{{ url()->to('/').'/products/' . $product->url_key }}">{{ $product->name }} </a>
-                    </strong>
-                </h5>
-                <!--Rating-->
-{{--                <ul class="rating mb-1 pb-2">--}}
-{{--                    <li>--}}
-{{--                        <i class="fas fa-star fa-xs"></i>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <i class="fas fa-star fa-xs"></i>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <i class="fas fa-star fa-xs"></i>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <i class="fas fa-star fa-xs"></i>--}}
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                        <i class="far fa-star fa-xs"></i>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-                <!-- Description -->
-                <p class="card-text">
-                    {{str_limit(strip_tags($product->description),$limit= 25 ,$end = '. . .')}}
-                </p>
-                <!-- Card footer -->
-                <div class="card-footer px-1">
-              <span class="float-left font-weight-bold">
+    {{--    <div class="col-lg-3 col-md-6 mb-4 card-product">--}}
+<!-- Card -->
+    <div class="card card-cascade narrower card-ecommerce">
+        <!-- Card image -->
+        <div class="view view-cascade overlay">
+            {{--                <img src="{{ $productBaseImage['medium_image_url'] }}" class="card-img-top"--}}
+            <img src="{{ $productBaseImage['medium_image_url'] }}" class="card-img-top"
+                 alt="sample photo">
+            <a>
+                <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+        <!-- Card image -->
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center pb-3">
+            <!-- Title -->
+            <h5 class="card-title mb-1">
                 <strong>
-                    {{ core()->currency($product->price) }}
-
-
+                    <a href="{{ url()->to('/').'/products/' . $product->url_key }}">{{ $product->name }} </a>
                 </strong>
-                                  <a class="material-tooltip-main d-inline-block" data-toggle="tooltip" data-placement="top"
-                                     title="Add to Cart">
+            </h5>
+            <!--Rating-->
+        {{--                <ul class="rating mb-1 pb-2">--}}
+        {{--                    <li>--}}
+        {{--                        <i class="fas fa-star fa-xs"></i>--}}
+        {{--                    </li>--}}
+        {{--                    <li>--}}
+        {{--                        <i class="fas fa-star fa-xs"></i>--}}
+        {{--                    </li>--}}
+        {{--                    <li>--}}
+        {{--                        <i class="fas fa-star fa-xs"></i>--}}
+        {{--                    </li>--}}
+        {{--                    <li>--}}
+        {{--                        <i class="fas fa-star fa-xs"></i>--}}
+        {{--                    </li>--}}
+        {{--                    <li>--}}
+        {{--                        <i class="far fa-star fa-xs"></i>--}}
+        {{--                    </li>--}}
+        {{--                </ul>--}}
+        <!-- Description -->
+            <p class="card-text">
+                {{str_limit(strip_tags($product->description),$limit= 25 ,$end = '. . .')}}
+            </p>
+            <!-- Card footer -->
+            <div class="card-footer px-1">
+              <span class="float-left font-weight-bold">
+                          <a class="material-tooltip-main d-inline-block" data-toggle="tooltip" data-placement="top"
+                             title="اضافه کردن به سبد خرید">
                        @if ($product->type == "configurable")
-                                          <div class="cart-wish-wrap">
+                                  <div class="cart-wish-wrap">
             <a href="{{ route('cart.add.configurable', $product->url_key) }}" class="btn btn-lg btn-primary addtocart">
                 {{ __('shop::app.products.add-to-cart') }}
             </a>
 
             @include('shop::products.wishlist')
         </div>
-                                      @else
-                                          <div class="cart-wish-wrap text-center text-center d-inline-block">
+                              @else
+                                  <div class="cart-wish-wrap text-center text-center d-inline-block">
             <form action="{{ route('cart.add', $product->product_id) }}" method="POST">
                 @csrf
                 <input type="hidden" name="product" value="{{ $product->product_id }}">
@@ -85,44 +80,48 @@
 
             @include('shop::products.wishlist')
         </div>
-                                      @endif
+                              @endif
 
                 </a>
 
+                <strong>
+                    {{ core()->currency($product->price) }}
+                </strong>
+
               </span>
-                    <span class="float-right">
+                <span class="float-right">
 
 {{--                <a class="material-tooltip-main" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">--}}
-{{--                  <i class="fas fa-heart grey-text ml-3"></i>--}}
-{{--                </a>--}}
+                    {{--                  <i class="fas fa-heart grey-text ml-3"></i>--}}
+                    {{--                </a>--}}
               </span>
-                </div>
             </div>
-            <!-- Card content -->
         </div>
-        <!-- Card -->
-{{--    </div>--}}
-{{--    <div class="product-image">--}}
-{{--        <a href="{{ route('shop.products.index', $product->url_key) }}" title="{{ $product->name }}">--}}
-{{--            <img class="img-fluid" src="{{ $productBaseImage['medium_image_url'] }}"--}}
-{{--                 onerror="this.src='{{ asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png') }}'"/>--}}
-{{--        </a>--}}
-{{--    </div>--}}
+        <!-- Card content -->
+    </div>
+    <!-- Card -->
+    {{--    </div>--}}
+    {{--    <div class="product-image">--}}
+    {{--        <a href="{{ route('shop.products.index', $product->url_key) }}" title="{{ $product->name }}">--}}
+    {{--            <img class="img-fluid" src="{{ $productBaseImage['medium_image_url'] }}"--}}
+    {{--                 onerror="this.src='{{ asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png') }}'"/>--}}
+    {{--        </a>--}}
+    {{--    </div>--}}
 
-{{--    <div class="product-information mt-2">--}}
+    {{--    <div class="product-information mt-2">--}}
 
-{{--        <div class="product-name text-center mb-2">--}}
-{{--            <a href="{{ url()->to('/').'/products/' . $product->url_key }}" title="{{ $product->name }}">--}}
-{{--                <span>--}}
-{{--                    {{ $product->name }}--}}
-{{--                </span>--}}
-{{--            </a>--}}
-{{--        </div>--}}
+    {{--        <div class="product-name text-center mb-2">--}}
+    {{--            <a href="{{ url()->to('/').'/products/' . $product->url_key }}" title="{{ $product->name }}">--}}
+    {{--                <span>--}}
+    {{--                    {{ $product->name }}--}}
+    {{--                </span>--}}
+    {{--            </a>--}}
+    {{--        </div>--}}
 
-{{--        @include ('shop::products.price', ['product' => $product])--}}
+    {{--        @include ('shop::products.price', ['product' => $product])--}}
 
-{{--        @include('shop::products.add-buttons', ['product' => $product])--}}
-{{--    </div>--}}
+    {{--        @include('shop::products.add-buttons', ['product' => $product])--}}
+    {{--    </div>--}}
 
 </div>
 

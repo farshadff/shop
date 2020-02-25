@@ -381,3 +381,6 @@ body {
 .size-area {
     border-bottom: 1px solid #cccccc;
 }
+.basket-link {
+    color: #000 !important;
+}

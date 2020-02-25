@@ -37,7 +37,7 @@ return [
         'wishlist' => 'لیست دلخواه',
         'cart' => 'سبد خرید',
         'logout' => 'خروج',
-        'search-text' => 'جستجو'
+        'search-text' => 'جستجو در نیکلاس....'
     ],
 
     'minicart' => [

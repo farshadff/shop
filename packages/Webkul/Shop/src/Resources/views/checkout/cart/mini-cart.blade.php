@@ -15,7 +15,7 @@
         </a>
 
         <span class="name">
-            {{ __('shop::app.header.cart') }}
+{{--            {{ __('shop::app.header.cart') }}--}}
             <span class="count"> ({{ $cart->items->count() }})</span>
         </span>
 
@@ -100,8 +100,8 @@
 
     <div class="dropdown-toggle">
         <div style="display: inline-block; cursor: pointer;">
-            <i class="fas fa-shopping-basket basket-icon"></i>
-            <span class="name">{{ __('shop::app.minicart.cart') }}<span class="count"> ({{ __('shop::app.minicart.zero') }}) </span></span>
+            <a class="basket-link" href="{{url('/checkout/cart')}}"><i class="fas fa-shopping-basket basket-icon"></i></a>
+{{--            <span class="name">{{ __('shop::app.minicart.cart') }}<span class="count"> ({{ __('shop::app.minicart.zero') }}) </span></span>--}}
         </div>
     </div>
 @endif

@@ -16,7 +16,7 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
 <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light white">
-
+{{--        <img src="" alt="">--}}
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
                 aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
@@ -263,6 +263,26 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/categories/men')}}">
                         <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/categories/men')}}">
+                        <i class="fab fa-pinterest" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/categories/men')}}">
+                        <i class="fab fa-telegram" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/categories/men')}}">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/categories/men')}}">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>

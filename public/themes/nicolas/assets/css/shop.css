@@ -949,7 +949,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-top {
-    background-color: #c42d2d;
+    background-color: rgba(215,199,163,0.57);
     /*margin-bottom: 16px;*/
     max-width: 100%;
     width: auto;
@@ -961,7 +961,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-top, .header .header-top div.left-content {
-    min-height: 50px;
+    min-height: 39px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1478,7 +1478,7 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .footer {
-    background-color: #c42d2d!important;
+    background-color: rgba(215,199,163,0.57)!important;
     box-sizing: border-box;
     position: relative;
     z-index: 2;
