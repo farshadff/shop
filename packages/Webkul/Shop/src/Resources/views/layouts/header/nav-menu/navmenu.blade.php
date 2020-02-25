@@ -15,8 +15,8 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
 <!--Main Navigation-->
 <header>
     <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-light navbar-main">
-{{--        <img src="" alt="">--}}
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
                 aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +25,7 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
 
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <img src="{{url('/themes/nicolas/assets/images/logo-nicolas.png')}}" class="img-fluid ml-4" alt="">
 
             <!-- Links -->
             <ul class="navbar-nav mr-auto">

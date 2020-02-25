@@ -22,7 +22,9 @@
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="{{ bagisto_asset('css/mdb.min.css') }}">
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="7105389f-8af8-4a49-8208-fa2d12a5dd0d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-{{--    <!-- Font Awesome -->--}}
+
+
+    {{--    <!-- Font Awesome -->--}}
 {{--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">--}}
 {{--    <!-- Bootstrap core CSS -->--}}
 {{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">--}}
@@ -54,7 +56,7 @@
 
 
 <body @if (core()->getCurrentLocale()->direction == 'rtl') class="rtl" @endif style="scroll-behavior: smooth;">
-
+    <a id="button"><i class="fas fa-angle-double-up fa-3x mt-1"></i></a>
     {!! view_render_event('bagisto.shop.layout.body.before') !!}
 
     <div id="app">
@@ -144,7 +146,22 @@
     {!! view_render_event('bagisto.shop.layout.body.after') !!}
 
     <div class="modal-overlay"></div>
+    <script>
+        var btn = $('#button');
 
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop:0}, '300');
+        });
+    </script>
 </body>
 
 </html>

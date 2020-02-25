@@ -10,6 +10,7 @@
                             <img class="logo" src="{{ bagisto_asset('images/logo.svg') }}"/>
                         @endif
                     </a>
+
                 </li>
             </ul>
 
