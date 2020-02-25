@@ -21,6 +21,7 @@
     <!-- Bootstrap core CSS -->
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="{{ bagisto_asset('css/mdb.min.css') }}">
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="7105389f-8af8-4a49-8208-fa2d12a5dd0d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 {{--    <!-- Font Awesome -->--}}
 {{--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">--}}
 {{--    <!-- Bootstrap core CSS -->--}}

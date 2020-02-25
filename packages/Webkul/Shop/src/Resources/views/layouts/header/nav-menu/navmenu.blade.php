@@ -285,6 +285,11 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
                         <i class="fab fa-linkedin" aria-hidden="true"></i>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/categories/men')}}">
+                        <img src="{{url('/themes/nicolas/assets/images/aparat.png')}}" alt="">
+                    </a>
+                </li>
             </ul>
             <!-- Links -->
 

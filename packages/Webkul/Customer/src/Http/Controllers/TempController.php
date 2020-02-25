@@ -50,7 +50,7 @@ class TempController extends Controller
         $temp = Temp::where('cellphone', $cellphone)->where('code', $code)->first();
         if ($temp) {
             $temp->delete();
-            return view('shop::customers.signup.index', compact('cellphone', $cellphone));
+            return view('shop::customers.signup.index', compact('cellphone'));
         } else {
             return redirect()->back();
         }

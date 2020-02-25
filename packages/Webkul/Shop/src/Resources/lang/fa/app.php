@@ -49,14 +49,14 @@ return [
 
     'footer' => [
         'subscribe-newsletter' => 'عضویت در خبرنامه',
-        'subscribe' => 'اشتراک در',
-        'locale' => 'محل',
+        'subscribe' => 'ارسال',
+        'locale' => 'انتخاب زبان',
         'currency' => 'واحد پول',
     ],
 
     'subscription' => [
         'unsubscribe' => 'لغو اشتراک',
-        'subscribe' => 'اشتراک در',
+        'subscribe' => 'ارسال',
         'subscribed' => 'شما هم اکنون در ایمیل های اشتراک مشترک شده اید',
         'not-subscribed' => 'شما نمی توانید به عضویت در ایمیل مشترک شوید ، پس از مدتی دوباره امتحان کنید',
         'already' => 'شما قبلاً در لیست اشتراک های ما مشترک شده اید',

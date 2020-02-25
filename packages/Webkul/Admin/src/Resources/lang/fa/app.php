@@ -127,7 +127,7 @@ return [
         'per-locale' => 'مبتنی بر محل',
         'per-channel' => 'مبتنی بر کانال',
         'position' => 'موقعیت',
-        'locale' => 'محل',
+        'locale' => 'زبان',
         'hostname' => 'نام میزبان',
         'email' => 'پست الکترونیک',
         'group' => 'گروه',
