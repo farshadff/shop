@@ -384,6 +384,13 @@ body {
 .basket-link {
     color: #000 !important;
 }
-.navbar-main {
+.navbar-main  {
     background-color: rgba(215,199,163,0.57) !important;
+}
+.btn-xs {
+    padding: 3px 6px !important;
+}
+.main-text {
+   color: rgba(215,199,163,0.57) !important;
+
 }

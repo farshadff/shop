@@ -73,8 +73,8 @@
                 <input type="hidden" name="product" value="{{ $product->product_id }}">
                 <input type="hidden" name="quantity" value="1">
                 <input type="hidden" value="false" name="is_configurable">
-                <button class="btn btn-sm addtocart" {{ $product->haveSufficientQuantity(1) ? '' : 'disabled' }}>                  <i
-                        class="fas fa-shopping-cart grey-text ml-3"></i>
+                <button class="btn btn-xs addtocart" {{ $product->haveSufficientQuantity(1) ? '' : 'disabled' }}>                  <i
+                        class="fas fa-shopping-cart main-text ml-3"></i>
 </button>
             </form>
 
