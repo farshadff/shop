@@ -949,7 +949,8 @@ section.slider-block div.slider-content div.slider-control .light-right-icon {
 }
 
 .header .header-top {
-    background-color: rgba(215,199,163,0.57);
+    background-color: #c42d2d!important;
+    /*background-color: rgba(215,199,163,0.57);*/
     /*margin-bottom: 16px;*/
     max-width: 100%;
     width: auto;

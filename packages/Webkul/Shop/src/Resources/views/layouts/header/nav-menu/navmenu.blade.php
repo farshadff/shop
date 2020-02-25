@@ -15,7 +15,7 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
 <!--Main Navigation-->
 <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light white">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-main">
 {{--        <img src="" alt="">--}}
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"

@@ -384,3 +384,6 @@ body {
 .basket-link {
     color: #000 !important;
 }
+.navbar-main {
+    background-color: rgba(215,199,163,0.57) !important;
+}

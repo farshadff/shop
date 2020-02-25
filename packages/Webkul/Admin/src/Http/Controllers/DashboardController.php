@@ -2,15 +2,6 @@
 
 namespace Webkul\Admin\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-use Webkul\Sales\Repositories\OrderRepository as Order;
-use Webkul\Sales\Repositories\OrderItemRepository as OrderItem;
-use Webkul\Customer\Repositories\CustomerRepository as Customer;
-use Webkul\Product\Repositories\ProductInventoryRepository as ProductInventory;
 
 /**
  * Dashboard controller
