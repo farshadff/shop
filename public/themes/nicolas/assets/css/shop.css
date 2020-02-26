@@ -381,7 +381,7 @@ input {
 }
 
 .product-price .special-price {
-    color: #ff6472
+    color: rgba(215,199,163,0.57) !important
 }
 
 .horizontal-rule {

@@ -18,7 +18,7 @@
             {{--                <img src="{{ $productBaseImage['medium_image_url'] }}" class="card-img-top"--}}
             <img src="{{ $productBaseImage['medium_image_url'] }}" class="card-img-top"
                  alt="sample photo">
-            <a>
+            <a href="{{url()->to('/').'/products/' . $product->url_key}}">
                 <div class="mask rgba-white-slight"></div>
             </a>
         </div>
@@ -84,12 +84,13 @@
 
                 </a>
 
-                <strong>
-                    {{ core()->currency($product->price) }}
-                </strong>
 
               </span>
                 <span class="float-right">
+       <strong>
+{{--                    {{ core()->currency($product->price) }}--}}
+           @include ('shop::products.price', ['product' => $product])
+                </strong>
 
 {{--                <a class="material-tooltip-main" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">--}}
                     {{--                  <i class="fas fa-heart grey-text ml-3"></i>--}}

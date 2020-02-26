@@ -144,7 +144,6 @@ class ProductController extends Controller
             'attribute_family_id' => 'required',
             'sku' => ['required', 'unique:products,sku', new \Webkul\Core\Contracts\Validations\Slug]
         ]);
-
         $product = $this->product->create(request()->all());
 
         session()->flash('success', trans('admin::app.response.create-success', ['name' => 'Product']));

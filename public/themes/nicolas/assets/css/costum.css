@@ -388,7 +388,7 @@ body {
     background-color: rgba(215,199,163,0.57) !important;
 }
 .btn-xs {
-    padding: 3px 6px !important;
+    padding: 6px 0px !important;
 }
 .main-text {
    color: rgba(215,199,163,0.57) !important;
@@ -409,15 +409,6 @@ body {
     visibility: hidden;
     z-index: 1000;
 }
-/*#button::after {*/
-/*    !*content: ">";*!*/
-/*    !*font-family: FontAwesome;*!*/
-/*    font-weight: normal;*/
-/*    font-style: normal;*/
-/*    font-size: 2em;*/
-/*    line-height: 50px;*/
-/*    color: #fff;*/
-/*}*/
 #button:hover {
     cursor: pointer;
     background-color: #333;
@@ -428,4 +419,11 @@ body {
 #button.show {
     opacity: 1;
     visibility: visible;
+}
+.timer {
+    font-size: 13px;
+    color: #e1e1e1;
+}
+.card-body {
+    min-height: 204px;
 }

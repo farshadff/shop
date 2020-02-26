@@ -13,10 +13,12 @@
                 {{ __('shop::app.products.sale') }}
             </div>
             <span class="regular-price">{{ core()->currency($product->price) }}</span>
-
+            <br>
             <span class="special-price">{{ core()->currency($priceHelper->getSpecialPrice($product)) }}</span>
+            <hr>
+           <p class="count timer">  <i class="fas fa-clock"></i>{{ $priceHelper->getSpecialTimer($product) }} روز</p>
+
         @else
-{{--            @php(dd(core()->currency(2255)))--}}
             <span>{{ core()->currency($product->price) }}</span>
         @endif
     @endif

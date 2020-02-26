@@ -2,6 +2,7 @@
 
 namespace Webkul\Product\Helpers;
 
+use Carbon\Carbon;
 use Webkul\Attribute\Repositories\AttributeRepository as Attribute;
 use Webkul\Product\Models\Product;
 use Webkul\Product\Models\ProductFlat;
@@ -163,5 +164,27 @@ class Price extends AbstractProduct
         }
 
         return false;
+    }
+    /**
+     * Returns the product's minimal price
+     *
+     * @param Product $product
+     * @return float
+     */
+    public function getSpecialTimer($product)
+    {
+        static $price = [];
+
+        if(array_key_exists($product->id, $price))
+            return $price[$product->id];
+
+        if ($this->haveSpecialPrice($product)) {
+            $now = Carbon::now();
+            $formated_to = Carbon::parse($product->special_price_to);
+            $difference  = $formated_to->diffInDays($now);
+            return $difference;
+        } else {
+            return $price[$product->id] = $product->price;
+        }
     }
 }
