@@ -60,7 +60,6 @@ class ProductAttributeValue extends Model implements ProductAttributeValueContra
     {
         return $this->belongsTo(ProductProxy::modelClass());
     }
-
     /**
      * Get the channel that owns the attribute value.
      */

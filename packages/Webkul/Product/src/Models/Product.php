@@ -312,4 +312,10 @@ class Product extends Model implements ProductContract
     {
         return $this;
     }
+    public function productSize(){
+        return $this->hasMany(ProductSize::class);
+    }
+    public function productColor(){
+        return $this->hasMany(ProductColor::class);
+    }
 }

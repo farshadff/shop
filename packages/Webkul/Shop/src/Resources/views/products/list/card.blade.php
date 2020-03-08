@@ -31,25 +31,6 @@
                     <a href="{{ url()->to('/').'/products/' . $product->url_key }}">{{ $product->name }} </a>
                 </strong>
             </h5>
-            <!--Rating-->
-        {{--                <ul class="rating mb-1 pb-2">--}}
-        {{--                    <li>--}}
-        {{--                        <i class="fas fa-star fa-xs"></i>--}}
-        {{--                    </li>--}}
-        {{--                    <li>--}}
-        {{--                        <i class="fas fa-star fa-xs"></i>--}}
-        {{--                    </li>--}}
-        {{--                    <li>--}}
-        {{--                        <i class="fas fa-star fa-xs"></i>--}}
-        {{--                    </li>--}}
-        {{--                    <li>--}}
-        {{--                        <i class="fas fa-star fa-xs"></i>--}}
-        {{--                    </li>--}}
-        {{--                    <li>--}}
-        {{--                        <i class="far fa-star fa-xs"></i>--}}
-        {{--                    </li>--}}
-        {{--                </ul>--}}
-        <!-- Description -->
             <p class="card-text">
                 {{str_limit(strip_tags($product->description),$limit= 25 ,$end = '. . .')}}
             </p>
@@ -59,13 +40,16 @@
                           <a class="material-tooltip-main d-inline-block" data-toggle="tooltip" data-placement="top"
                              title="اضافه کردن به سبد خرید">
                        @if ($product->type == "configurable")
+                                  <div class="cart-wish-wrap text-center text-center d-inline-block">
                                   <div class="cart-wish-wrap">
-            <a href="{{ route('cart.add.configurable', $product->url_key) }}" class="btn btn-lg btn-primary addtocart">
-                {{ __('shop::app.products.add-to-cart') }}
+            <a href="{{ route('cart.add.configurable', $product->url_key) }}" class="btn btn-xs addtocart">
+                     <i
+                         class="fas fa-shopping-cart main-text ml-3"></i>
             </a>
 
             @include('shop::products.wishlist')
         </div>
+                                  </div>
                               @else
                                   <div class="cart-wish-wrap text-center text-center d-inline-block">
             <form action="{{ route('cart.add', $product->product_id) }}" method="POST">

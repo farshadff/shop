@@ -431,7 +431,8 @@ return [
             'related-products' => 'محصولات مرتبط',
             'product-search-hint' => 'شروع به تایپ نام محصول کنید',
             'no-result-found' => 'محصولاتی با همین نام یافت نشد',
-            'searching' => 'جست و جو ...'
+            'searching' => 'جست و جو ...',
+            'channel' => 'زبان'
         ],
 
         'attributes' => [
@@ -444,7 +445,7 @@ return [
             'type' => 'نوع ویژگی',
             'text' => 'Text',
             'textarea' => 'Textarea',
-            'price' => 'Price',
+            'price' => 'قیمت',
             'boolean' => 'Boolean',
             'select' => 'Select',
             'multiselect' => 'Multiselect',
