@@ -391,7 +391,7 @@ body {
     padding: 6px 0px !important;
 }
 .main-text {
-   color: #d11e26 !important;
+   color: #202020 !important;
 }
 #button {
     display: inline-block;
@@ -429,4 +429,10 @@ body {
 }
 .border-b {
     border: 1px solid #cccccc;
+}
+.product-name {
+    color: #202020 !important;
+}
+.discount {
+    color: #cc0b0f;
 }
