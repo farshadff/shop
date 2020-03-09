@@ -9,9 +9,9 @@
         <span class="final-price">{{ core()->currency($priceHelper->getMinimalPrice($product)) }}</span>
     @else
         @if ($priceHelper->haveSpecialPrice($product))
-            <div class="sticker sale">
-                {{ __('shop::app.products.sale') }}
-            </div>
+{{--            <div class="sticker sale">--}}
+{{--                {{ __('shop::app.products.sale') }}--}}
+{{--            </div>--}}
             <span class="regular-price">{{ core()->currency($product->price) }}</span>
             <br>
             <span class="special-price">{{ core()->currency($priceHelper->getSpecialPrice($product)) }}</span>

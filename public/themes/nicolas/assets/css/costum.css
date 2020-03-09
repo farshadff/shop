@@ -427,4 +427,6 @@ body {
 .card-body {
     min-height: 204px;
 }
-#d11e26
+.border-b {
+    border: 1px solid #cccccc;
+}
