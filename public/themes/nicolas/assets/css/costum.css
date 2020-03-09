@@ -427,12 +427,15 @@ body {
 .card-body {
     min-height: 204px;
 }
-.border-b {
-    border: 1px solid #cccccc;
-}
+
 .product-name {
     color: #202020 !important;
 }
 .discount {
-    color: #cc0b0f;
+    background: red;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    padding: 5px;
+    border-radius: 20px;
 }
