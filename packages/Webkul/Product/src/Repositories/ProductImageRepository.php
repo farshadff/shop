@@ -28,20 +28,22 @@ class ProductImageRepository extends Repository
      * @param mixed $product
      * @return mixed
      */
-    public function uploadImages($data, $product)
+    public function uploadImages($data, $product,$color_id = null,$size_id = null)
     {
         $previousImageIds = $product->images()->pluck('id');
-
+        $i = 0;
         if (isset($data['images'])) {
             foreach ($data['images'] as $imageId => $image) {
                 $file = 'images.' . $imageId;
                 $dir = 'product/' . $product->id;
-
                 if (str_contains($imageId, 'image_')) {
                     if (request()->hasFile($file)) {
+                        $i++;
                         $this->create([
                                 'path' => request()->file($file)->store($dir),
-                                'product_id' => $product->id
+                                'product_id' => $product->id,
+                                'product_color_id' => $color_id[$i],
+                                'product_size_id'=> $size_id ,
                             ]);
                     }
                 } else {

@@ -23,15 +23,6 @@
     <link rel="stylesheet" href="{{ bagisto_asset('css/mdb.min.css') }}">
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="7105389f-8af8-4a49-8208-fa2d12a5dd0d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 
-
-    {{--    <!-- Font Awesome -->--}}
-{{--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">--}}
-{{--    <!-- Bootstrap core CSS -->--}}
-{{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">--}}
-{{--    <!-- Material Design Bootstrap -->--}}
-{{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/css/mdb.min.css" rel="stylesheet">--}}
-{{--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"--}}
-{{--          rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
 
     @if ($favicon = core()->getCurrentChannel()->favicon_url)
@@ -51,7 +42,10 @@
     @stack('css')
 
     {!! view_render_event('bagisto.shop.layout.head') !!}
-
+<!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 
 
@@ -162,7 +156,34 @@
             $('html, body').animate({scrollTop:0}, '300');
         });
     </script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        jQuery('.example1 .slider-for').slick({
+            rtl: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: false,
+            asNavFor: '.example1 .slider-nav',
+            dots: false,
+            arrows:true,
+            draggable:false,
+            appendArrows: '.pr_images',
+            prevArrow:'<i class="fa fa-angle-left slick-prev"></i>',
+            nextArrow:'<i class="fa fa-angle-right slick-next"></i>'
+        });
+        jQuery('.example1 .slider-nav').slick({
+            slidesToShow: 8,
+            asNavFor: '.example1 .slider-for',
+            dots: false,
+            arrows:true,
+            draggable:false,
+            centerMode: true,
+            focusOnSelect: true,
+            autoplay:true,
+            adaptiveHeight: false,
 
+        });
+    </script>
 </body>
 
 </html>

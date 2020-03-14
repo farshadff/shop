@@ -112,6 +112,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         'view' => 'shop::products.view'
     ])->name('shop.products.index');
 
+
     // Show Product Review Form
     Route::get('/reviews/{slug}', 'Webkul\Shop\Http\Controllers\ReviewController@show')->defaults('_config', [
         'view' => 'shop::products.reviews.index'

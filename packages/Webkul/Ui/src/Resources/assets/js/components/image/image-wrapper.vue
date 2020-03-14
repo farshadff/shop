@@ -22,7 +22,7 @@
             buttonLabel: {
                 type: String,
                 required: false,
-                default: 'Add Image'
+                default: 'اضافه کردن عکس'
             },
 
             removeButtonLabel: {

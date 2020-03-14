@@ -177,6 +177,7 @@ class ProductController extends Controller
      */
     public function update(ProductForm $request, $id)
     {
+
         $product = $this->product->update(request()->all(), $id);
 
         session()->flash('success', trans('admin::app.response.update-success', ['name' => 'Product']));

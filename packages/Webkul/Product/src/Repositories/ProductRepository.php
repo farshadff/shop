@@ -145,6 +145,7 @@ class ProductRepository extends Repository
      */
     public function update(array $data, $id, $attribute = "id")
     {
+
         Event::fire('catalog.product.update.before', $id);
 
         $product = $this->find($id);
@@ -201,7 +202,7 @@ class ProductRepository extends Repository
             }
         }
 
-        $route = request()->route() ? request()->route()->getName() : ""; 
+        $route = request()->route() ? request()->route()->getName() : "";
 
         if ($route != 'admin.catalog.products.massupdate') {
             if  (isset($data['categories'])) {
@@ -258,8 +259,7 @@ class ProductRepository extends Repository
             }
 
             $this->productInventory->saveInventories($data, $product);
-
-            $this->productImage->uploadImages($data, $product);
+            $this->productImage->uploadImages($data, $product,$data['color_id']);
         }
 
         if (isset($data['channels'])) {

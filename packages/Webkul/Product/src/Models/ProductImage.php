@@ -10,7 +10,7 @@ class ProductImage extends Model implements ProductImageContract
 {
     public $timestamps = false;
 
-    protected $fillable = ['path', 'product_id'];
+    protected $fillable = ['path', 'product_id','product_color_id','product_size_id'];
 
     /**
      * Get the product that owns the image.

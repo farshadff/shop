@@ -5,9 +5,14 @@
         <input type="file" v-validate="'mimes:image/*'" accept="image/*" :name="finalInputName" ref="imageInput" :id="_uid" @change="addImageView($event)" :required="required ? true : false" />
 
         <img class="preview" :src="imageData" v-if="imageData.length > 0">
-
-        <label class="remove-image" @click="removeImage()">{{ removeButtonLabel }}</label>
-    </label>
+        <label class="remove-image" @click="removeImage()">حذف عکس</label>
+        <select style=" font-family: IranSansLight, sans-serif; width:100%" class="mdb-select md-form" name="color_id[]" id="">
+            <option value="" disabled selected>رنگ عکس را انتخاب کنید</option>
+            <option value="1">مشکی</option>
+            <option value="2">قهوه ای</option>
+            <option value="3">سفید</option>
+        </select>
+     </label>
 </template>
 
 <script>

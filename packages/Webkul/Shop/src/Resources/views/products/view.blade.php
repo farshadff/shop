@@ -14,113 +14,137 @@
 
     {!! view_render_event('bagisto.shop.products.view.before', ['product' => $product]) !!}
 
-    <section class="product-detail">
+{{--    <section class="product-detail">--}}
 
-        <div class="layouter">
-            <product-view>
-                <div class="form-container">
-                    @csrf()
+{{--        <div class="layouter">--}}
+{{--            <product-view>--}}
+{{--                <div class="form-container">--}}
+{{--                    @csrf()--}}
 
-                    <input type="hidden" name="product" value="{{ $product->product_id }}">
+{{--                    <input type="hidden" name="product" value="{{ $product->product_id }}">--}}
 
-                    @include ('shop::products.view.gallery')
+{{--                    @include ('shop::products.view.gallery')--}}
 
-                    <div class="details">
+{{--                    <div class="details">--}}
 
-                        <div class="product-heading">
-                            <span>{{ $product->name }}</span>
-                        </div>
+{{--                        <div class="product-heading">--}}
+{{--                            <span>{{ $product->name }}</span>--}}
+{{--                        </div>--}}
 
-                        @include ('shop::products.review', ['product' => $product])
+{{--                        @include ('shop::products.review', ['product' => $product])--}}
 
-                        @include ('shop::products.price', ['product' => $product])
+{{--                        @include ('shop::products.price', ['product' => $product])--}}
 
-                        @include ('shop::products.view.stock', ['product' => $product])
+{{--                        @include ('shop::products.view.stock', ['product' => $product])--}}
 
-                        {!! view_render_event('bagisto.shop.products.view.short_description.before', ['product' => $product]) !!}
+{{--                        {!! view_render_event('bagisto.shop.products.view.short_description.before', ['product' => $product]) !!}--}}
 
-                        <div class="description">
-                            {!! $product->short_description !!}
-                        </div>
+{{--                        <div class="description">--}}
+{{--                            {!! $product->short_description !!}--}}
+{{--                        </div>--}}
 
-                        {!! view_render_event('bagisto.shop.products.view.short_description.after', ['product' => $product]) !!}
-
-
-                        {!! view_render_event('bagisto.shop.products.view.quantity.before', ['product' => $product]) !!}
-
-                        <div class="quantity control-group" :class="[errors.has('quantity') ? 'has-error' : '']">
-
-                            <label class="required">{{ __('shop::app.products.quantity') }}</label>
-
-                            <input class="control quantity-change" value="-"
-                                   style="width: 35px; border-radius: 3px 0px 0px 3px;"
-                                   onclick="updateQunatity('remove')" readonly>
-
-                            <input name="quantity" id="quantity" class="control quantity-change" value="1"
-                                   v-validate="'required|numeric|min_value:1'"
-                                   style="width: 60px; position: relative; margin-left: -4px; margin-right: -4px; border-right: none;border-left: none; border-radius: 0px;"
-                                   data-vv-as="&quot;{{ __('shop::app.products.quantity') }}&quot;" readonly>
-
-                            <input class="control quantity-change" value="+"
-                                   style="width: 35px; padding: 0 12px; border-radius: 0px 3px 3px 0px;"
-                                   onclick=updateQunatity('add') readonly>
-
-                            <span class="control-error"
-                                  v-if="errors.has('quantity')">@{{ errors.first('quantity') }}</span>
-                        </div>
-
-                        {!! view_render_event('bagisto.shop.products.view.quantity.after', ['product' => $product]) !!}
-
-                        @if ($product->type == 'configurable')
-                            <input type="hidden" value="true" name="is_configurable">
-                        @else
-                            <input type="hidden" value="false" name="is_configurable">
-                        @endif
-
-                        @include ('shop::products.view.configurable-options')
-
-                        {!! view_render_event('bagisto.shop.products.view.description.before', ['product' => $product]) !!}
-
-                        <accordian :title="'{{ __('shop::app.products.description') }}'" :active="true">
-                            <div slot="header">
-                                {{ __('shop::app.products.description') }}
-                                <i class="icon expand-icon right"></i>
-                            </div>
-
-                            <div slot="body">
-                                <div class="full-description">
-                                    {!! $product->description !!}
-                                </div>
-                            </div>
-                        </accordian>
-
-                        {!! view_render_event('bagisto.shop.products.view.description.before', ['product' => $product]) !!}
-
-                        @include ('shop::products.view.attributes')
-
-                        @include ('shop::products.view.reviews')
-                    </div>
-                </div>
-            </product-view>
-        </div>
-
-        @include ('shop::products.view.related-products')
-
-        @include ('shop::products.view.up-sells')
-
-    </section>
+{{--                        {!! view_render_event('bagisto.shop.products.view.short_description.after', ['product' => $product]) !!}--}}
 
 
+{{--                        {!! view_render_event('bagisto.shop.products.view.quantity.before', ['product' => $product]) !!}--}}
 
-    <div class="container-fluid">
+{{--                        <div class="quantity control-group" :class="[errors.has('quantity') ? 'has-error' : '']">--}}
+
+{{--                            <label class="required">{{ __('shop::app.products.quantity') }}</label>--}}
+
+{{--                            <input class="control quantity-change" value="-"--}}
+{{--                                   style="width: 35px; border-radius: 3px 0px 0px 3px;"--}}
+{{--                                   onclick="updateQunatity('remove')" readonly>--}}
+
+{{--                            <input name="quantity" id="quantity" class="control quantity-change" value="1"--}}
+{{--                                   v-validate="'required|numeric|min_value:1'"--}}
+{{--                                   style="width: 60px; position: relative; margin-left: -4px; margin-right: -4px; border-right: none;border-left: none; border-radius: 0px;"--}}
+{{--                                   data-vv-as="&quot;{{ __('shop::app.products.quantity') }}&quot;" readonly>--}}
+
+{{--                            <input class="control quantity-change" value="+"--}}
+{{--                                   style="width: 35px; padding: 0 12px; border-radius: 0px 3px 3px 0px;"--}}
+{{--                                   onclick=updateQunatity('add') readonly>--}}
+
+{{--                            <span class="control-error"--}}
+{{--                                  v-if="errors.has('quantity')">@{{ errors.first('quantity') }}</span>--}}
+{{--                        </div>--}}
+
+{{--                        {!! view_render_event('bagisto.shop.products.view.quantity.after', ['product' => $product]) !!}--}}
+
+{{--                        @if ($product->type == 'configurable')--}}
+{{--                            <input type="hidden" value="true" name="is_configurable">--}}
+{{--                        @else--}}
+{{--                            <input type="hidden" value="false" name="is_configurable">--}}
+{{--                        @endif--}}
+
+{{--                        @include ('shop::products.view.configurable-options')--}}
+
+{{--                        {!! view_render_event('bagisto.shop.products.view.description.before', ['product' => $product]) !!}--}}
+
+{{--                        <accordian :title="'{{ __('shop::app.products.description') }}'" :active="true">--}}
+{{--                            <div slot="header">--}}
+{{--                                {{ __('shop::app.products.description') }}--}}
+{{--                                <i class="icon expand-icon right"></i>--}}
+{{--                            </div>--}}
+
+{{--                            <div slot="body">--}}
+{{--                                <div class="full-description">--}}
+{{--                                    {!! $product->description !!}--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </accordian>--}}
+
+{{--                        {!! view_render_event('bagisto.shop.products.view.description.before', ['product' => $product]) !!}--}}
+
+{{--                        @include ('shop::products.view.attributes')--}}
+
+{{--                        @include ('shop::products.view.reviews')--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </product-view>--}}
+{{--        </div>--}}
+
+{{--        @include ('shop::products.view.related-products')--}}
+
+{{--        @include ('shop::products.view.up-sells')--}}
+
+{{--    </section>--}}
+
+    @inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
+
+    <div class="container-fluid mt-25">
         <div class="row">
             <div class="col-lg-8">
-                9
+                <div class="example example1">
+
+                    <div class="slider slider-for">
+                        @foreach($productImageHelper->getGalleryImages($product,(int)request()->get('color_id')) as $item)
+                        <div><img class="m-auto img-slider img-fluid" src="{{$item['original_image_url']}}" alt=""></div>
+                        @endforeach
+                    </div>
+                    <div class="slider slider-nav">
+                            @foreach($productImageHelper->getGalleryImages($product,(int)request()->get('color_id')) as $item)
+                            <div class="nav-items"><p><img class="img-fluid" src="{{$item['large_image_url']}}" alt=""></p></div>
+                            @endforeach
+                        </div>
+                </div>
             </div>
             <div class="col-lg-4 aside-product">
                 <div class="product-title mb-20">
-                    <h1 class="mt-25">product title</h1>
-                    <span class="text-muted">model number</span>
+                    <h1 class="mt-25">{{ $product->name }}</h1>
+                    <span class="text-muted">{{$product->sku}}</span>
+                    <hr>
+                    <form action="{{ route('shop.products.index', $product->url_key) }}" id="color_form" method="get">
+                        <label class="circle black">
+                            <input type="radio" name="color_id" value="1">
+                        </label>
+                        <label class="circle brown">
+                            <input type="radio" name="color_id" value="2">
+                        </label>
+                        <label class="circle white">
+                            <input type="radio" name="color_id" value="3">
+                        </label>
+                    </form>
                 </div>
                 <div class="size-area mt-25">
                     <ul class="nav nav-tabs size-tab" id="myTab" role="tablist">
@@ -183,7 +207,9 @@
                     </div>
                 </div>
                 <div class="more-info pt-3">
-                    <p class="text-center">lore
+                    <p class="text-center">
+                        {!! $product->short_description !!}
+
                     </p>
                 </div>
             </div>
@@ -194,7 +220,12 @@
 @endsection
 
 @push('scripts')
-
+    <script>
+        const form = document.querySelector('#color_form');
+        form.addEventListener('change', function(event) {
+            form.submit();
+        });
+    </script>
     <script type="text/x-template" id="product-view-template">
         <form method="POST" id="product-form" action="{{ route('cart.add', $product->product_id) }}"
               @click="onSubmit($event)">
