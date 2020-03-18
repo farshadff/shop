@@ -114,23 +114,7 @@
 
     <div class="container-fluid mt-25">
         <div class="row">
-           <div class="col-lg-8">
-                <div class="example example1">
-
-                    <div class="slider slider-for">
-                        @foreach($productImageHelper->getGalleryImages($product,(int)request()->get('color_id')) as $item)
-                        <div><img class="m-auto img-slider img-fluid" src="{{$item['large_image_url']}}" alt=""></div>
-                        @endforeach
-                    </div>
-                    <div class="slider slider-nav">
-                            @foreach($productImageHelper->getGalleryImages($product,(int)request()->get('color_id')) as $item)
-                            <div class="nav-items"><p><img class="img-fluid" src="{{$item['large_image_url']}}" alt=""></p></div>
-                            @endforeach
-                        </div>
-                </div>
-            </div>
-
-           <div class="col-lg-4 aside-product">
+            <div class="col-lg-4 aside-product">
                 <div class="product-title mb-20">
                     <h1 class="mt-25">{{ $product->name }}</h1>
                     <span class="text-muted mt-25 mb-30">{{$product->sku}}</span>
@@ -141,10 +125,10 @@
                     @include ('shop::products.view.stock', ['product' => $product])
                     <form action="{{ route('shop.products.index', $product->url_key) }}" id="color_form" method="get">
                         @foreach($productImageHelper->getProductImageColor($product) as $item)
-                        <label class="circle black">
-                            <img class="img-fluid" src="{{$item['small_image_url']}}" alt="">
-                            <input type="radio" name="color_id" value="{{$item['color_id']}}">
-                        </label>
+                            <label class="circle black">
+                                <img class="img-fluid" src="{{$item['small_image_url']}}" alt="">
+                                <input type="radio" name="color_id" value="{{$item['color_id']}}">
+                            </label>
                         @endforeach
                     </form>
                 </div>
@@ -178,6 +162,23 @@
                     </p>
                 </div>
             </div>
+           <div class="col-lg-8">
+                <div class="example example1">
+
+                    <div class="slider slider-for">
+                        @foreach($productImageHelper->getGalleryImages($product,(int)request()->get('color_id')) as $item)
+                        <div><img class="m-auto img-slider img-fluid" src="{{$item['large_image_url']}}" alt=""></div>
+                        @endforeach
+                    </div>
+                    <div class="slider slider-nav">
+                            @foreach($productImageHelper->getGalleryImages($product,(int)request()->get('color_id')) as $item)
+                            <div class="nav-items"><p><img class="img-fluid" src="{{$item['large_image_url']}}" alt=""></p></div>
+                            @endforeach
+                        </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 

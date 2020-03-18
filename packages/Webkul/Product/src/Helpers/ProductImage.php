@@ -83,11 +83,12 @@ class ProductImage extends AbstractProduct
      */
     public function getProductImageColor($product)
     {
+
         if (!$product)
             return [];
         $images = [];
 
-        $relation =Product::where('id',$product->id)->with(array('images' => function($query) {
+        $relation =Product::where('id',$product->product->id)->with(array('images' => function($query) {
             $query->groupBy('product_color_id');
         }))->first();
         foreach ($relation->images as $image) {
@@ -95,7 +96,7 @@ class ProductImage extends AbstractProduct
                 continue;
             $images[] = [
                 'small_image_url' => url('cache/small/' . $image->path),
-               'color_id' => $image->product_color_id,
+                 'color_id' => $image->product_color_id,
             ];
         }
         return $images;
