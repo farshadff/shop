@@ -114,12 +114,12 @@
 
     <div class="container-fluid mt-25">
         <div class="row">
-            <div class="col-lg-8">
+           <div class="col-lg-8">
                 <div class="example example1">
 
                     <div class="slider slider-for">
                         @foreach($productImageHelper->getGalleryImages($product,(int)request()->get('color_id')) as $item)
-                        <div><img class="m-auto img-slider img-fluid" src="{{$item['original_image_url']}}" alt=""></div>
+                        <div><img class="m-auto img-slider img-fluid" src="{{$item['large_image_url']}}" alt=""></div>
                         @endforeach
                     </div>
                     <div class="slider slider-nav">
@@ -129,21 +129,23 @@
                         </div>
                 </div>
             </div>
-            <div class="col-lg-4 aside-product">
+
+           <div class="col-lg-4 aside-product">
                 <div class="product-title mb-20">
                     <h1 class="mt-25">{{ $product->name }}</h1>
-                    <span class="text-muted">{{$product->sku}}</span>
-                    <hr>
+                    <span class="text-muted mt-25 mb-30">{{$product->sku}}</span>
+                    <hr class="mt-25 mb-20">
+                    @include ('shop::products.price', ['product' => $product])
+                    <hr class="mt-25 mb-20">
+
+                    @include ('shop::products.view.stock', ['product' => $product])
                     <form action="{{ route('shop.products.index', $product->url_key) }}" id="color_form" method="get">
+                        @foreach($productImageHelper->getProductImageColor($product) as $item)
                         <label class="circle black">
-                            <input type="radio" name="color_id" value="1">
+                            <img class="img-fluid" src="{{$item['small_image_url']}}" alt="">
+                            <input type="radio" name="color_id" value="{{$item['color_id']}}">
                         </label>
-                        <label class="circle brown">
-                            <input type="radio" name="color_id" value="2">
-                        </label>
-                        <label class="circle white">
-                            <input type="radio" name="color_id" value="3">
-                        </label>
+                        @endforeach
                     </form>
                 </div>
                 <div class="size-area mt-25">
@@ -151,18 +153,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                                aria-controls="home"
-                               aria-selected="true">EU</a>
+                               aria-selected="true">سایز موجود</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                               aria-controls="profile"
-                               aria-selected="false">US</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                               aria-controls="contact"
-                               aria-selected="false">UK</a>
-                        </li>
+
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -175,35 +168,7 @@
                             <span class="size-icon text-muted">32</span>
                             <span class="size-icon text-muted">32</span>
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                        </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                            <span class="size-icon text-muted">32</span>
-                        </div>
+
                     </div>
                 </div>
                 <div class="more-info pt-3">

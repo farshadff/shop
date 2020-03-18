@@ -34,19 +34,21 @@ class ProductImageRepository extends Repository
         $i = 0;
         if (isset($data['images'])) {
             foreach ($data['images'] as $imageId => $image) {
-                $file = 'images.' . $imageId;
+              $file = 'images.' . $imageId;
                 $dir = 'product/' . $product->id;
                 if (str_contains($imageId, 'image_')) {
                     if (request()->hasFile($file)) {
-                        $i++;
                         $this->create([
-                                'path' => request()->file($file)->store($dir),
-                                'product_id' => $product->id,
-                                'product_color_id' => $color_id[$i],
-                                'product_size_id'=> $size_id ,
-                            ]);
+                            'path' => request()->file($file)->store($dir),
+                            'product_id' => $product->id,
+                            'product_color_id' => $color_id[$i],
+                            'product_size_id' => $size_id,
+                        ]);
                     }
+                    $i++;
+
                 } else {
+
                     if (is_numeric($index = $previousImageIds->search($imageId))) {
                         $previousImageIds->forget($index);
                     }

@@ -86,7 +86,7 @@
 {{--    </div>--}}
     <!-- Card -->
 {{--        </div>--}}
-    <a  href="{{ route('shop.products.index', $product->url_key) }}" title="{{ $product->name }}">
+    <a  href="{{ url()->to('/').'/products/' . $product->url_key.'?color_id=1'}} " title="{{ $product->name }}">
         <span class="discount">{{round(($product->price - $product->special_price) /$product->price * 100 )}}%</span>
         <img class="img-fluid" src="{{ $productBaseImage['medium_image_url'] }}"
              onerror="this.src='{{ asset('vendor/webkul/ui/assets/images/product/meduim-product-placeholder.png') }}'"/>
@@ -94,7 +94,7 @@
         <hr>
         <div class="row">
         <div class="col-lg-9">
-  <a class="product-name" href="{{ url()->to('/').'/products/' . $product->url_key }}">{{ $product->name }} </a>
+  <a class="product-name" href="{{ url()->to('/').'/products/' . $product->url_key.'?color_id=1'  }}">{{ $product->name }} </a>
         </div>
             <div class="col-lg-3">
                 <a href="{{ route('cart.add.configurable', $product->url_key) }}" class="addtocart">

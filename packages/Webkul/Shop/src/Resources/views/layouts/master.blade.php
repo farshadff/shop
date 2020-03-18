@@ -173,6 +173,7 @@
         });
         jQuery('.example1 .slider-nav').slick({
             slidesToShow: 8,
+            slidesToScroll: 1,
             asNavFor: '.example1 .slider-for',
             dots: false,
             arrows:true,

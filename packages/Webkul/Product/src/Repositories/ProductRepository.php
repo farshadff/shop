@@ -257,7 +257,6 @@ class ProductRepository extends Repository
             foreach ($previousVariantIds as $variantId) {
                 $this->delete($variantId);
             }
-
             $this->productInventory->saveInventories($data, $product);
             $this->productImage->uploadImages($data, $product,$data['color_id']);
         }
