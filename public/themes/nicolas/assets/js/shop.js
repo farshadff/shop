@@ -77,7 +77,7 @@
                 getProps: function () {
                     this.setProps()
                 }, setProps: function () {
-                    var e = this;
+                    var e = this
                     this.slides.forEach(function (t) {
                         e.images.push(e.public_path + "/storage/" + t.path), e.content.push(t.content)
                     }), this.currentIndex = 0, 0 == this.images.length ? this.images.push = "vendor/webkul/shop/assets/images/banner.png" : this.images_loaded = !0
@@ -2616,10 +2616,8 @@
                         return e || se
                     })
                 }
-            }),
-                // _.each({scrollLeft: "pageXOffset", scrollTop: "pageYOffset"}, function (e, t)
-                // {
-                // var n = "pageYOffset" === t;
+            }), _.each({scrollLeft: "pageXOffset", scrollTop: "pageYOffset"}, function (e, t) {
+                var n = "pageYOffset" === t;
                 _.fn[e] = function (i) {
                     return V(this, function (e, i, r) {
                         var o;
@@ -3057,7 +3055,7 @@
                             var t = this;
                             if (this.isRange) {
                                 var n = this.currentIndex.map(function (n, i) {
-                                    if (i === t.focusj  || t.fixed) {
+                                    if (i === t.focusSlider || t.fixed) {
                                         var r = e(n), o = t.fixed ? t.valueLimit[i] : [0, t.total];
                                         if (r <= o[1] && r >= o[0]) return r
                                     }
@@ -10516,7 +10514,6 @@
         function u(e) {
             e.cancelToken && e.cancelToken.throwIfRequested()
         }
-
         e.exports = function (e) {
             return u(e), e.baseURL && !a(e.url) && (e.url = l(e.baseURL, e.url)), e.headers = e.headers || {}, e.data = r(e.data, e.headers, e.transformRequest), e.headers = i.merge(e.headers.common || {}, e.headers[e.method] || {}, e.headers || {}), i.forEach(["delete", "get", "head", "post", "put", "patch", "common"], function (t) {
                 delete e.headers[t]

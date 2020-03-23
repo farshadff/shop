@@ -121,6 +121,11 @@
     </script>
 {{--MDBPRO--}}
 
+
+
+
+{{--    <script type="text/javascript" src="{{ bagisto_asset('js/shop.js') }}"></script>--}}
+    <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>
     <!-- jQuery -->
     <script type="text/javascript" src="{{ bagisto_asset('js/jquery.min.js') }}"></script>
     <!-- Bootstrap tooltips -->
@@ -129,11 +134,6 @@
     <script type="text/javascript" src="{{ bagisto_asset('js/bootstrap.min.js') }}"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="{{ bagisto_asset('js/mdb.min.js') }}"></script>
-
-
-
-    <script type="text/javascript" src="{{ bagisto_asset('js/shop.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/webkul/ui/assets/js/ui.js') }}"></script>
 
     @stack('scripts')
 

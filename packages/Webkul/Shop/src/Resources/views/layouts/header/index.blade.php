@@ -77,76 +77,142 @@
 
                 {!! view_render_event('bagisto.shop.layout.header.account-item.before') !!}
 
+{{--                <li>--}}
+{{--                    <span class="dropdown-toggle">--}}
+{{--                       <i class="fas fa-user user-icon"></i>--}}
+{{--                    </span>--}}
+{{--                    @guest('customer')--}}
+{{--                        <ul class="dropdown-list account guest">--}}
+{{--                            <li>--}}
+{{--                                <div>--}}
+{{--                                    <label--}}
+{{--                                        style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">--}}
+{{--                                        {{ __('shop::app.header.title') }}--}}
+{{--                                    </label>--}}
+{{--                                </div>--}}
+
+{{--                                <div style="margin-top: 5px;">--}}
+{{--                                    <span style="font-size: 12px;">{{ __('shop::app.header.dropdown-text') }}</span>--}}
+{{--                                </div>--}}
+
+{{--                                <div style="margin-top: 15px;">--}}
+{{--                                    <a class="btn btn-primary btn-md" href="{{ route('customer.session.index') }}"--}}
+{{--                                       style="color: #ffffff">--}}
+{{--                                        {{ __('shop::app.header.sign-in') }}--}}
+{{--                                    </a>--}}
+
+{{--                                    <a class="btn btn-primary btn-md" href="{{ route('customer.register.get-mobile') }}"--}}
+{{--                                       style="float: right; color: #ffffff">--}}
+{{--                                        {{ __('shop::app.header.sign-up') }}--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    @endguest--}}
+
+{{--                    @auth('customer')--}}
+{{--                        <ul class="dropdown-list account customer">--}}
+{{--                            <li>--}}
+{{--                                <div>--}}
+{{--                                    <label--}}
+{{--                                        style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">--}}
+{{--                                        {{ auth()->guard('customer')->user()->first_name }}--}}
+{{--                                    </label>--}}
+{{--                                </div>--}}
+
+{{--                                <ul>--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>--}}
+{{--                                    </li>--}}
+
+{{--                                    <li>--}}
+{{--                                        <a href="{{ route('customer.wishlist.index') }}">{{ __('shop::app.header.wishlist') }}</a>--}}
+{{--                                    </li>--}}
+
+{{--                                    <li>--}}
+{{--                                        <a href="{{ route('shop.checkout.cart.index') }}">{{ __('shop::app.header.cart') }}</a>--}}
+{{--                                    </li>--}}
+
+{{--                                    <li>--}}
+{{--                                        <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    @endauth--}}
+{{--                </li>--}}
                 <li>
-                    <span class="dropdown-toggle">
-{{--                        <i class="icon account-icon"></i>--}}
-<i class="fas fa-user user-icon"></i>
-                        {{--                        <span class="name">{{ __('shop::app.header.account') }}</span>--}}
+                    <!--Dropdown primary-->
+                    <div class="dropdown">
+                        <!--Trigger-->
+                        <a class=" dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">   <span class="fas fa-user user-icon"></span>
+                            <span class="name">
+{{--            {{ __('shop::app.header.cart') }}--}}
+            <span class="count"></span>
+        </span></a>
 
-                        {{--                                                <i class="icon arrow-down-icon"></i>--}}
-                    </span>
 
-                    @guest('customer')
-                        <ul class="dropdown-list account guest">
-                            <li>
-                                <div>
-                                    <label
-                                        style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
-                                        {{ __('shop::app.header.title') }}
-                                    </label>
-                                </div>
+                        <!--Menu-->
+                        <div class="dropdown-menu dropdown-primary buy-basket">
+                            @guest('customer')
 
-                                <div style="margin-top: 5px;">
-                                    <span style="font-size: 12px;">{{ __('shop::app.header.dropdown-text') }}</span>
-                                </div>
+                            <h4>{{ __('shop::app.header.title') }}</h4>
+                            <h5>{{ __('shop::app.header.dropdown-text') }}
+                            </h5>
+                            <div class="row">
 
-                                <div style="margin-top: 15px;">
+                                <div class="col-lg-6">
                                     <a class="btn btn-primary btn-md" href="{{ route('customer.session.index') }}"
                                        style="color: #ffffff">
                                         {{ __('shop::app.header.sign-in') }}
                                     </a>
-
+                                </div>
+                                <div class="col-lg-6">
                                     <a class="btn btn-primary btn-md" href="{{ route('customer.register.get-mobile') }}"
                                        style="float: right; color: #ffffff">
                                         {{ __('shop::app.header.sign-up') }}
                                     </a>
                                 </div>
-                            </li>
-                        </ul>
-                    @endguest
+                            </div>
+                            @endguest
 
-                    @auth('customer')
-                        <ul class="dropdown-list account customer">
-                            <li>
-                                <div>
-                                    <label
-                                        style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
-                                        {{ auth()->guard('customer')->user()->first_name }}
-                                    </label>
-                                </div>
 
-                                <ul>
+
+                            @auth('customer')
+                                <ul class="dropdown-list account customer">
                                     <li>
-                                        <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>
-                                    </li>
+                                        <div>
+                                            <label
+                                                style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
+                                                {{ auth()->guard('customer')->user()->first_name }}
+                                            </label>
+                                        </div>
 
-                                    <li>
-                                        <a href="{{ route('customer.wishlist.index') }}">{{ __('shop::app.header.wishlist') }}</a>
-                                    </li>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>
+                                            </li>
 
-                                    <li>
-                                        <a href="{{ route('shop.checkout.cart.index') }}">{{ __('shop::app.header.cart') }}</a>
-                                    </li>
+                                            <li>
+                                                <a href="{{ route('customer.wishlist.index') }}">{{ __('shop::app.header.wishlist') }}</a>
+                                            </li>
 
-                                    <li>
-                                        <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
+                                            <li>
+                                                <a href="{{ route('shop.checkout.cart.index') }}">{{ __('shop::app.header.cart') }}</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
-                            </li>
-                        </ul>
-                    @endauth
+                            @endauth
+                        </div>
+                    </div>
+                    <!--/Dropdown primary-->
                 </li>
-
                 {!! view_render_event('bagisto.shop.layout.header.account-item.after') !!}
 
 

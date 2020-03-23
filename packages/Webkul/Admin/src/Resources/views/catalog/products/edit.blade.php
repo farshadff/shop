@@ -155,6 +155,7 @@
                 {!! view_render_event('bagisto.admin.catalog.product.edit_form_accordian.inventories.before', ['product' => $product]) !!}
 
                 @include ('admin::catalog.products.accordians.inventories')
+                @include ('admin::catalog.products.accordians.sizes')
 
                 {!! view_render_event('bagisto.admin.catalog.product.edit_form_accordian.inventories.after', ['product' => $product]) !!}
 

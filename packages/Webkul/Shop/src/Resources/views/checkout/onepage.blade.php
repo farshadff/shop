@@ -5,6 +5,8 @@
 @stop
 
 @section('content-wrapper')
+    @include('shop::checkout.onepage.customer-info')
+
     <checkout></checkout>
 @endsection
 

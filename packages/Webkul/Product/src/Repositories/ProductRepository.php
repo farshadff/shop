@@ -11,6 +11,7 @@ use Webkul\Attribute\Repositories\AttributeOptionRepository;
 use Webkul\Product\Models\ProductAttributeValue;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Storage;
+use Webkul\Product\Models\ProductSize;
 
 /**
  * Product Repository
@@ -145,7 +146,6 @@ class ProductRepository extends Repository
      */
     public function update(array $data, $id, $attribute = "id")
     {
-
         Event::fire('catalog.product.update.before', $id);
 
         $product = $this->find($id);
@@ -260,7 +260,12 @@ class ProductRepository extends Repository
             $this->productInventory->saveInventories($data, $product);
             $this->productImage->uploadImages($data, $product,$data['color_id']);
         }
-
+        foreach ($data['sizes'] as $size ) {
+            ProductSize::create([
+             'product_id' => $product->id,
+             'size' => $size
+         ]);
+        }
         if (isset($data['channels'])) {
             $product['channels'] = $data['channels'];
         }

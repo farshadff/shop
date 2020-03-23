@@ -4033,10 +4033,10 @@ section.review .review-layouter .ratings-reviews .right-side .rater .line-bar .l
     float: left
 }
 
-.rtl .item div {
-    margin-left: 15px;
-    margin-right: 0 !important
-}
+/*.rtl .item div {*/
+/*    margin-left: 15px;*/
+/*    margin-right: 0 !important*/
+/*}*/
 
 .rtl .cart-item-list .item .item-details .misc div.qty-text {
     margin-right: 0;
