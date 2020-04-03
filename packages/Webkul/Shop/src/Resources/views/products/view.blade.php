@@ -120,6 +120,7 @@
                     <h1 class="mt-25">{{ $product->name }}</h1>
                     <span class="text-muted mt-25 mb-30">{{$product->sku}}</span>
                     <hr class="mt-25 mb-20">
+
                     @include ('shop::products.price', ['product' => $product])
                     <hr class="mt-25">
                     @include ('shop::products.add-buttons', ['product' => $product])

@@ -1,4 +1,5 @@
 @inject ('productImageHelper', 'Webkul\Product\Helpers\ProductImage')
+@inject ('priceHelper', 'Webkul\Product\Helpers\Price')
 
 <?php $cart = cart()->getCart(); ?>
 
@@ -13,7 +14,9 @@
     <div class="dropdown">
         <!--Trigger-->
         <a class=" dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">   <span class="icon cart-icon"></span>
+           aria-haspopup="true" aria-expanded="false">   <i class="fas fa-shopping-cart"></i>
+
+
             <span class="name">
 {{--            {{ __('shop::app.header.cart') }}--}}
             <span class="count"> ({{ $cart->items->count() }})</span>
@@ -29,7 +32,9 @@
 
                     {!! view_render_event('bagisto.shop.checkout.cart-mini.subtotal.before', ['cart' => $cart]) !!}
 
-                    <b>{{ core()->currency($cart->base_sub_total) }}</b>
+{{--                    <b>{{ core()->currency($cart->base_sub_total) }}</b>--}}
+                    <span class="price-toman">{{$priceHelper->setToman($cart->base_sub_total) }} </span>
+
 
                     {!! view_render_event('bagisto.shop.checkout.cart-mini.subtotal.after', ['cart' => $cart]) !!}
                 </p>
@@ -73,8 +78,9 @@
 
                             {!! view_render_event('bagisto.shop.checkout.cart-mini.item.price.before', ['item' => $item]) !!}
 
-                            <div class="item-price"><b>{{ core()->currency($item->base_total) }}</b></div>
+{{--                            <div class="item-price"><b>{{ core()->currency($item->base_total) }}</b></div>--}}
 
+                            <span class="price-toman">{{$priceHelper->setToman($item->base_total) }} </span>
                             {!! view_render_event('bagisto.shop.checkout.cart-mini.item.price.after', ['item' => $item]) !!}
 
 
@@ -104,7 +110,7 @@
 
     <div class="dropdown-toggle">
         <div style="display: inline-block; cursor: pointer;">
-            <a class="basket-link" href="{{url('/checkout/cart')}}"><i class="fas fa-shopping-basket basket-icon"></i></a>
+            <a class="basket-link" href="{{url('/checkout/cart')}}"><i class="fas fa-shopping-cart basket-icon"></i></a>
 {{--            <span class="name">{{ __('shop::app.minicart.cart') }}<span class="count"> ({{ __('shop::app.minicart.zero') }}) </span></span>--}}
         </div>
     </div>

@@ -475,3 +475,7 @@ body {
 .buy-basket {
     width: 400px;
 }
+.price-toman:after{
+    content: "تومان";
+
+}

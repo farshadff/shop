@@ -409,7 +409,7 @@ return [
             ],
 
             'quantity-error' => 'مقدار درخواستی در دسترس نیست',
-            'cart-subtotal' => 'سبد فرعی',
+            'cart-subtotal' => 'قیمت ',
             'cart-remove-action' => 'آیا واقعاً می خواهید این کار را انجام دهید؟',
             'partial-cart-update' => 'فقط برخی از محصولات (های) به روز شده اند',
         ],

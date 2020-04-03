@@ -1,4 +1,4 @@
-<div class="order-summary">
+<div class="order-summary ml-5">
     <h3>{{ __('shop::app.checkout.total.order-summary') }}</h3>
 
     <div class="item-detail">

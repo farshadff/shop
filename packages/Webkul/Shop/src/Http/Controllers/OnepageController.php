@@ -188,6 +188,7 @@ class OnepageController extends Controller
         $this->validateOrder();
 
         $cart = Cart::getCart();
+//        dd($cart);
 
         if ($redirectUrl = Payment::getRedirectUrl($cart)) {
             return response()->json([
@@ -228,7 +229,6 @@ class OnepageController extends Controller
     public function validateOrder()
     {
         $cart = Cart::getCart();
-
         $this->validatesDiscount->validate();
 
         if (! $cart->shipping_address) {

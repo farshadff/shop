@@ -187,4 +187,8 @@ class Price extends AbstractProduct
             return $price[$product->id] = $product->price;
         }
     }
+    public function setToman($price){
+        $toman = $price / 10 ;
+        return number_format($toman,0,'.',',');
+    }
 }

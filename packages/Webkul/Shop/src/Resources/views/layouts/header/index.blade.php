@@ -180,34 +180,39 @@
 
 
                             @auth('customer')
-                                <ul class="dropdown-list account customer">
-                                    <li>
-                                        <div>
-                                            <label
-                                                style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
-                                                {{ auth()->guard('customer')->user()->first_name }}
-                                            </label>
-                                        </div>
+                                <div class="row">
+                                    <h4>                                                    <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
+                                    </h4>
+                                    <ul class="dropdown-list account customer">
+                                        <li>
+                                            <div>
+                                                <label
+                                                    style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
+                                                    {{ auth()->guard('customer')->user()->first_name }}
+                                                </label>
+                                            </div>
 
-                                        <ul>
-                                            <li>
-                                                <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>
-                                            </li>
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ route('customer.profile.index') }}">{{ __('shop::app.header.profile') }}</a>
+                                                </li>
 
-                                            <li>
-                                                <a href="{{ route('customer.wishlist.index') }}">{{ __('shop::app.header.wishlist') }}</a>
-                                            </li>
+                                                <li>
+                                                    <a href="{{ route('customer.wishlist.index') }}">{{ __('shop::app.header.wishlist') }}</a>
+                                                </li>
 
-                                            <li>
-                                                <a href="{{ route('shop.checkout.cart.index') }}">{{ __('shop::app.header.cart') }}</a>
-                                            </li>
+                                                <li>
+                                                    <a href="{{ route('shop.checkout.cart.index') }}">{{ __('shop::app.header.cart') }}</a>
+                                                </li>
 
-                                            <li>
-                                                <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                                <li>
+                                                    <a href="{{ route('customer.session.destroy') }}">{{ __('shop::app.header.logout') }}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             @endauth
                         </div>
                     </div>
